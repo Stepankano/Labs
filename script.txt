@@ -1,16 +1,11 @@
 # !/usr/bin/bash
 gcc cp1_lab8.c -g
 
-
 gcc cp2_lab8.c -g
-
 
 gcc cp3_lab8.c -g
 
-./a.exe < test.txt | diff -n answers.txt - && echo "OK"
-
-
-gcc cp4_lab8.c -g
+gcc cp5_lab8.c -g
 
 gdb a.exe
 

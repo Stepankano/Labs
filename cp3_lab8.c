@@ -1,7 +1,11 @@
 #include<stdio.h>
 
 int Factorial( int a ){
-return ( a == 0 )? 0 : ( a == 1)? 1 : ( a + Factorial ( a - 1 ));
+return ( a == 0 )? 0 : ( a == 1)? 1 : ( a * Factorial ( a - 1 ));
+}
+
+int Factorial( int a ){
+return ( a == 0 )? 0 : ( a == 1)? 1 : ( a * Factorial ( a - 1 ));
 }
 
 int main(){
