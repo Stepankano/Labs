@@ -9,3 +9,4 @@ gcc cp5_lab8.c -g
 
 gdb a.exe
 
+rm a.exe
