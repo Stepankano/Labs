@@ -1,0 +1,3 @@
+# !/usr/bin/bash
+./a.exe < tests.txt | diff -b answers.txt - && echo "OK"
+

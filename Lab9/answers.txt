@@ -1,0 +1,16 @@
+Hit, time = 17 
+
+Don`t hit, time = 51 
+x = 27554 
+y = 1 
+Dinamic parameter of moving = 2 
+
+Hit, time = 1 
+
+Hit, time = 13 
+
+Don`t hit, time = 51 
+x = 27554 
+y = 1 
+Dinamic parameter of moving = 2 
+
