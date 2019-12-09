@@ -1,0 +1,9 @@
+# ! usr\bin\bash
+
+gcc lab11.c
+
+./a.exe < test.txt > answer.txt
+
+rm a.exe
+
+echo "Lab 11 successfuly complete"
