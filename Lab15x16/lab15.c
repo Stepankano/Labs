@@ -31,7 +31,6 @@ int main(){
     rang = rank(k);
     k=1;
     for(int i = 0; i < rang; i++ ){
-    // через свапы меняй
     swap((&table[(i*rang)+i+1]),&(table[rang*(i+1)-(i)]));
     for(int j = 1; j <= rang;j++){
         printf("%d ", table[(i*rang) + j]);
