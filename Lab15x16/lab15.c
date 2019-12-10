@@ -1,9 +1,6 @@
 #include <stdio.h>
 
- struct cell{
-int value, number;
-struct cell *next, *last;
-} ;
+ 
 int rank(int a){
     int k = 0;
    for(int i = 0; i < 8 ;i++){
@@ -15,29 +12,34 @@ int rank(int a){
 
 }
 
-int main(){
-    int matrix; 
-    struct cell *runner;
-    int k = 0;
-    int rang;
-    while ( scanf ( "%d", &matrix) != EOF){
-        if ( matrix != '\n' || matrix != ' '){
-            printf("%d\n", matrix);
-            k+=1;
-            struct cell private;
-            private.value = matrix;
-            private.number = k;
-            if ( k == 1){
-                runner = &private;
-            }
-            else{
-                (*runner).next = &private;
-                private.last = &(*runner);
-                runner = &private; 
-            }
-        }
-    }
-    rang = rank(k);
+void swap (int* a, int* b){
+   int t = *a;
+   *a = *b;
+   *b = t;
 
+}
+
+int main(){
+    
+    int matrix, rang, var, k = 0;
+    int table [65];
+    while ( scanf ( "%d", &matrix) != EOF){
+        table[k+1]=matrix;
+    k+=1;
+    }
+    
+    rang = rank(k);
+    k=1;
+    for(int i = 0; i < rang; i++ ){
+    // через свапы меняй
+    swap((&table[(i*rang)+i+1]),&(table[rang*(i+1)-(i)]));
+    for(int j = 1; j <= rang;j++){
+        printf("%d ", table[(i*rang) + j]);
+        
+    }
+    printf("%c", '\n');
+    }
+    
+   
 return 0;
 }

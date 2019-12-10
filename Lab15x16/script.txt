@@ -1,0 +1,10 @@
+# !\usr\bin\bash
+
+gcc lab15.c
+
+./a.exe < test.txt || diff -n answer.txt - && echo "OK"
+
+rm a.exe 
+
+echo "Lab №15 successfuly complete"
+
