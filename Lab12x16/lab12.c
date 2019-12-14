@@ -1,45 +1,60 @@
 #include<stdio.h>
 
-
-int main(){
-char number;
-int key;
-char yuy [10];
-char set [10] = {'0','1','2','3','4','5','6','7','8','9'};
-for (int y = 0; y < 10; y ++){
-    yuy[y] = set[y];
+int check (int a, int b){
+    if (a == 0){ return (b%10);}
+    for(int i = 0; i < a; i++){
+        b = b/10;
+    }
+    return (b % 10);
 }
 
+int stepen (int a){
+if(a == 0){return 1;}
+if(a == 1){return 10;}
+int k = 10;
+for(int i = 2; i <= a; i++){
+    k = k*10;
+}
+return k;
+}
 
-    while( scanf("%c", &number ) != EOF){
-          if( number != '\n'){
-            for ( int i = 0; i < 10 ; i ++){
-                if ( number == yuy [i]){
-                    yuy [i] = 'f';
-                    
+int add (int a, int mn){
+    if (!check(a,mn)){
+    mn = mn + stepen(a);
+    } 
+    
+    return mn;
+}
+
+int main(){
+    int key;
+    char number;
+    int mnoj_for_chek = 1111111111;
+    int mnoj = 0;
+    
+        while ( scanf("%c", &number) != EOF ){
+        
+        
+            if((int)number>=48 && (int)number<=57){
+                mnoj = add((int)number-48, mnoj);
+                key = 1;
+            } 
+            else{
+                if(key == 1){
+                    if((mnoj_for_chek - mnoj) != 0 ){ 
+                        printf("%s\n", "true");
+                        key = 0;
+                        mnoj = 0;}
+
+                    else{ 
+                        printf("%s\n","false");
+                        key = 0;
+                        mnoj = 0;}
                 }
             }
-
-
-          }
-          else{
-              key = 0;
-              for( int i = 0; i < 10; i ++){
-                  
-                  if (yuy [i] != 'f'){
-                      printf("%s\n", "true");
-                      i = 10;
-                      key = 1;
-                  }
-              }
-              if ( key == 0){
-                  printf("%s\n", "false");
-              }
-            for (int y = 0; y < 10; y ++){
-            yuy[y] = set[y];
-            }
-          }
-          
-    }
+        
+        }
+    
+    
     return 0;
 }
