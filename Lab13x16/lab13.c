@@ -1,72 +1,129 @@
 #include<stdio.h>
 #include<ctype.h>
-#include<string.h>
-#include<stdbool.h>
+
 /*
  1. считать мн-во согласных 1-го слова. записать в буфер
  2. считать мн-во согласных второго слова. сравнить с буфером. запомнить как буфер 
 */
 
-#define consonants (1u << ('b'-'a') | 1u << ('c'-'a') | 1u << ('d'-'a') | 1u << ('f'-'a') | 1u << ('g'-'a') | 1u << ('h'-'a') | 1u << ('j'-'a') | 1u << ('k'-'a') | 1u << ('l'-'a') | 1u << ('m'-'a') | 1u << ('n'-'a') | 1u << ('p'-'a') | 1u << ('q'-'a') | 1u << ('r'-'a') | 1u << ('s'-'a') | 1u << ('t'-'a') | 1u << ('v'-'a') | 1u << ('w'-'a') | 1u << ('x'-'a') | 1u << ('y'-'a') | 1u << ('z'-'a'))
 
-unsigned int char_to_set( char c){
-    c = tolower(c);
-    if(c < 'a' || c > 'z'){
-        return 0;
-    } else {
-        
-        return 1u << (c - 'a');
+
+unsigned long long int check (unsigned long long int a, unsigned long long int b){
+    if (a == 0){ return (b%10);}
+    for(int i = 0; i < a; i++){
+        b = b/10;
     }
+    return (b % 10);
 }
 
-typedef unsigned set_data_elem;
-enum {
-    bits_per_char = 8,
-    bits_per_elem = sizeof(set_data_elem)*bits_per_char,
-    datalen = (1 << bits_per_char) / bits_per_elem
-};
-
-typedef struct 
-{
-    set_data_elem data[datalen];
-}set;
-
-bool set_equal(const set *s1, const set *s2){
-    for(int i = 0; i != datalen; ++i){
-        if(s1 -> data[i] != s2 -> data[i]) return false;
-    }
-    return true;
+unsigned long long int stepen (int a){
+if(a == 0){return 1;}
+if(a == 1){return 10;}
+unsigned long long int k = 10;
+for(int i = 2; i <= a; i++){
+    k = k*10;
 }
+return k;
+}
+
+unsigned long long int konq(unsigned long long int a, unsigned long long int b){
+    unsigned long long int c = 0;
+
+    for(int i =0 ; i <= 13; i++){
+        if(( a % 10 == 1 ) && ( b % 10 == 1 )){
+            c+=stepen(i);
+        }
+        a/=10;
+        b/=10;
+    }
+    return c;
+}
+
+unsigned long long int add (unsigned long long int a, unsigned long long int mn){
+    if (!check(a,mn)){
+    mn = mn + stepen(a);
+    } 
+    
+    return mn;
+}
+
 
 int main(){
-    char alpha;
-    bool trigger = false;
-    char c;
-    unsigned int buffer = 0;
-    unsigned int mainterance = 0;
-
-    while ( scanf("%c", &c) != ' '){
-        buffer = buffer | char_to_set(c);
-        printf("%c", c);
-    };
-    while ( scanf("%c", &c) != EOF){
-        mainterance = mainterance | char_to_set(c);
-        printf("%d", 2);
-        while ( scanf("%c", &c) != ' '){
-            mainterance = mainterance | char_to_set(c);
-        };
-        printf("%d", 3);
-        buffer = buffer & consonants;
-        mainterance = mainterance & consonants;
-        if(set_equal(&buffer, &mainterance)){
-            printf("%s", "true");
-            trigger = true;
+    int key = 0;
+    int enwrd = 0;
+    char ltr;
+    unsigned long long int mainterance1 = 0;
+    unsigned long long int mainterance2 = 0;
+    unsigned long long int consonants1 =  1111011101110; // 97-109
+    unsigned long long int consonants2 = 1011101111101; //  110-122
+    unsigned long long int buffer1 = 0;
+    unsigned long long int buffer2 = 0;
+        while(scanf("%c", &ltr) != EOF){
+            ltr = (int)tolower(ltr)-97;
+            if(ltr >= 0 && ltr <= 25){
+                enwrd = 1;
+                if(ltr >=0 && ltr <= 12){
+                    mainterance1 = add(ltr,mainterance1);
+                }
+                if(ltr >=13 && ltr <= 25){
+                    mainterance2 = add(ltr-13,mainterance2);
+                }
+                
+                    
+            } else {
+                
+                if(enwrd == 1){
+                    enwrd = 0;
+                    mainterance1 = konq(mainterance1, consonants1);
+                    mainterance2 = konq(mainterance2, consonants2);
+                    
+                    if(key == 1){
+                        if((mainterance1 - buffer1) == 0 && (mainterance2 - buffer2) == 0){
+                            printf("%s","true ");
+                            return 0;
+                        } else {
+                            buffer1 = mainterance1;
+                            buffer2 = mainterance2;
+                            mainterance1 = 0;
+                            mainterance2 = 0;
+                        }
+                    }
+                    if(key == 0){
+                        buffer1 = mainterance1;
+                        buffer2 = mainterance2;
+                        mainterance1 = 0;
+                        mainterance2 = 0;
+                        key = 1;
+                    }
+                }
+            }
+            
         }
-        buffer = mainterance;
-        mainterance = 0;
-        printf("%d", 4);
-    };
-    if(trigger){}
-    else { printf("%s", "false");}
+        
+                if(enwrd == 1){
+                    enwrd = 0;
+                    mainterance1 = konq(mainterance1, consonants1);
+                    mainterance2 = konq(mainterance2, consonants2);
+                    
+                    if(key == 1){
+                        if((mainterance1 - buffer1) == 0 && (mainterance2 - buffer2) == 0){
+                            printf("%s","true ");
+                            return 0;
+                        } else {
+                            buffer1 = mainterance1;
+                            buffer2 = mainterance2;
+                            mainterance1 = 0;
+                            mainterance2 = 0;
+                        }
+                    }
+                    if(key == 0){
+                        buffer1 = mainterance1;
+                        buffer2 = mainterance2;
+                        mainterance1 = 0;
+                        mainterance2 = 0;
+                        key = 1;
+                    }
+                }
+        printf("%s\n", "false ");
     return 0;
 }
