@@ -10,16 +10,16 @@
 double my_abs1(double x){
     return ( x >= 0 ) ? x : -x;
 }
-
-double pro_func(double x){
- return (3 * log(x) * log(x) + 6 * log(x) - 5);
+/*
+double func(double x){
+ return (3 * sin( sqrt(x)) + 0.35 * x - 3.8);
 }
-
-double iteration(double a, double b){
+*/
+double iteration(double func(), double a, double b){
  double x = (a + b) / 2;
- while(pro_func(x) > eps){
+ while(my_abs1(func(x)) > eps){
 
-     x = x - pro_func(x);
+     x = x - func(x);
 
      
  }

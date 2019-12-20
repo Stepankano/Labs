@@ -1,2 +1,3 @@
+Iteration = -5.192798
 Dixotomia = 1.883239
 Newton = 1.883239
