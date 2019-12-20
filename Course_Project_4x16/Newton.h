@@ -9,11 +9,11 @@
 #define eps  0.000001
 
 double func1(double x){
- return (3 * sin( sqrt(x) ) + 0.35 * x - 3.8);
+ return (3 * log(x) * log(x) + 6 * log(x) - 5);
 }
 
 double pro_func1(double x){
- return ((3.0 * cos( sqrt(x)) / (2 * sqrt(x))) + 0.35);
+ return 6 * (log(x) + 1) / x;
 }
 double my_abs2(double x){
     return ( x >= 0 ) ? x : -x;

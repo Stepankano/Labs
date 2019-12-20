@@ -9,7 +9,7 @@
 #define eps  0.000001
 
 double func(double x){
- return (3 * sin( sqrt(x) ) + 0.35 * x - 3.8);
+ return (3 * log(x) * log(x) + 6 * log(x) - 5);
 }
 
 typedef enum monoton{  // возрастает или убывает
