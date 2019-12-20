@@ -6,7 +6,7 @@ const int k = 1;
 double m_eps()
 {
 	double e = 1.0;
-	while (1.0 + e / 4.0 > 1.0){
+	while (1.0 + e / 2.0 > 1.0){
 		e /= 2.0;
         
     }
@@ -59,6 +59,6 @@ float now;
     print_v(now, system_answer(now), row(now), system_answer(now)-row(now));
   }
   
-  printf("%.11e\n", m_eps());
+  printf("Machine epsilone = %.11e\n", m_eps());
     return 0;
 }
