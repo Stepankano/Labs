@@ -52,7 +52,6 @@ void print_v(double x, double f, double f1, double r) {
 int main(){
 float piece = 0.1;
 float now;
-
     print_n_times_border(33);
   for (int i = 0; i <= (int)(1/piece) ; i++) {
       now = piece * i;
