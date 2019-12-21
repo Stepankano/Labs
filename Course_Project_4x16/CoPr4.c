@@ -7,13 +7,13 @@ double my_func(double x){
 return (3 * sin( sqrt(x) ) + 0.35 * x - 3.8);
 }
 
-double proizvodnaja(double x){
+double derivative(double x){
  return ((3.0 * cos( sqrt(x)) / (2 * sqrt(x))) + 0.35);
 }
 
 int main(){
     double (*point)(double) = my_func;
-    double (*proizv)(double) = proizvodnaja;
+    double (*proizv)(double) = derivative;
 
 printf("Iteration = %.6f\n", iteration(point, 2, 3));
 printf("Dixotomia = %.6f\n", dixotom(point, 2, 3));
