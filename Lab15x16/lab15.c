@@ -33,7 +33,7 @@ int main(){
     for(int i = 0; i < rang; i++ ){
     swap((&table[(i*rang)+i+1]),&(table[rang*(i+1)-(i)]));
     for(int j = 1; j <= rang;j++){
-        printf("%d ", table[(i*rang) + j]);
+        printf("%3d ", table[(i*rang) + j]);
         
     }
     printf("%c", '\n');

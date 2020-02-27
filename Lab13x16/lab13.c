@@ -78,7 +78,7 @@ int main(){
                     mainterance2 = konq(mainterance2, consonants2);
                     
                     if(key == 1){
-                        if((mainterance1 - buffer1) == 0 && (mainterance2 - buffer2) == 0){
+                        if(konq(mainterance1, buffer1) == 0 && konq(mainterance2, buffer2) == 0){
                             printf("%s","true ");
                             return 0;
                         } else {
@@ -106,7 +106,7 @@ int main(){
                     mainterance2 = konq(mainterance2, consonants2);
                     
                     if(key == 1){
-                        if((mainterance1 - buffer1) == 0 && (mainterance2 - buffer2) == 0){
+                        if(konq(mainterance1, buffer1) == 0 && konq(mainterance2, buffer2) == 0){
                             printf("%s","true ");
                             return 0;
                         } else {
