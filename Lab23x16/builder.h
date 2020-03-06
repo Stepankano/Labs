@@ -3,16 +3,11 @@
 
 #include <stdio.h>
 #include <malloc.h>
+#include "structures.h"
 
 #define cell struct tree_cell
 
-typedef struct tree_cell
-{
-    cell *left;
-    cell *right;
-    cell *parent;
-    int value;
-} this_cell;
+
 
 void ret_add(cell *adder)
 {
@@ -20,7 +15,6 @@ void ret_add(cell *adder)
     {
         adder = (*adder).parent;
     }
-    printf(" %s\n", "OK");
 };
 
 void add_cell(int new_value, cell *adder)
@@ -42,7 +36,7 @@ void add_cell(int new_value, cell *adder)
         (*(*adder).right).right = NULL;
         (*(*adder).right).parent = adder;
     }
-    printf("%d ", new_value);
+
     ret_add(adder);
 }
 
@@ -78,24 +72,9 @@ void pathfinder(int new_value, cell *adder)
     }
 }
 
-cell builder()
+cell builder(int root_value)
 {
-    printf("%s\n","Tree construction started");
-    int tree_value;
-
-    scanf("%d", &tree_value);
-    cell root = {NULL, NULL, NULL, tree_value};
-    printf("%d  %s\n", tree_value, "OK");
-    cell *tmp_left = &root;
-    cell *tmp_right = &root;
-    cell *tmp_adder = &root;
-    const cell *pointer_root = &root;
-
-    while (scanf("%d", &tree_value) != EOF)
-    {
-        pathfinder(tree_value, tmp_adder);
-    }
-    printf("%s\n", "Tree was built successfully");
+    cell root = {NULL, NULL, NULL, root_value};
     return root;
 }
 #endif
