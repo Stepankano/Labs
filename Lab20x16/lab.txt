@@ -1,0 +1,18 @@
+cat < file1.txt \\ вывод содержимого файла file1.txt
+cp file1.txt file2.txt | cmp file1.txt file2.txt \\ копироваь содержимое файла file1.txt в файл file2.txt и сравнить их
+sum file1.txt file2.txt \\ вычисление 16-битной контрольной суммы и блоков файлов
+vim file.txt \\открытие в редакторе vim файла file.txt
+comm file.txt file2.txt \\ сравнение двух файлов
+cat file.txt file2.txt | tail -7 \\ вывод последних семи строк вывода двух файлов
+mkdir file \\ создание директории
+cat file/file.file \\вывод файла file с расширением file из директории file
+file file/file.file | tee file.txt \\ определить тип файла file с расширением file из директории file и записать его в file
+cat file/file.file |head -1 \\ вывод 1-й строки файла file с расширением file из директории file
+wc -l file.txt | wc -c file.txt| wc -m file.txt \\ вывод кол-ва строк, байт и символов файла file.txt
+dd if=file.txt of=file123.txt \\ копирование содержимого файла file.txt в file123.txt
+df -h \\ вывод списка всех файловых систем по именам устройств, сообщает их размер, занятое и свободное пространство и точки монтирования в понятном виде
+du \\ вывод размера пространства, занимаемого каждым файлом и каталогом в текущем каталоге
+find |head -10 \\ вывод 1-х 10 строк вывода всех файлов данного каталога
+sort file.file \\ сортировка file.file
+paste file2.txt \\ обьединяет строки файла в 1
+nroff file2.txt \\ вывод файла в принтеро-понятном формате
