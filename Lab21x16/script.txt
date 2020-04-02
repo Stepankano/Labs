@@ -1,0 +1,57 @@
+# !\usr\bin\bash
+
+
+if [ $# = 1 ]
+ 	then 
+	if [ "$1" = "--help" ] 
+		then
+		echo "Usage: dsws [max_size] [prefix]";
+		exit 0;
+	fi
+	echo "Error#0x2";
+	echo "Enter key --help for manual";
+	exit 0;
+fi
+
+if [ $# = 0 ]
+	then 
+	echo "Error#0x1 
+Enter key --help for manual";
+	exit 0;
+fi
+
+if [ $# = 2 ]
+	then
+	size=$1;
+	prefix=$2;
+	folder_s=$(du --block-size=1 $prefix);
+	folder_size=$(echo "$folder_s" | cut -f 1);
+	cd $prefix;
+
+	while [ $folder_size -gt $size ]
+	do
+
+	find $prefix -exec ls -S > .unreadingsuffix {} \;
+	filefinder=$(cat .unreadingsuffix | head -1 );
+
+	cat .unreadingsuffix | head -1 > .name_unreadingsuffix2;
+	rm $(cat .name_unreadingsuffix2);
+	
+	cat .name_unreadingsuffix2 > .unreadingsuffix;
+	cat .unreadingsuffix;	
+
+	folder_s=$(du --block-size=1 $prefix);
+	folder_size=$(echo "$folder_s" | cut -f 1);
+	echo $folder_size;
+	
+	rm .name_unreadingsuffix2 .unreadingsuffix;
+
+	done
+	exit 0;
+
+fi
+
+echo "Error#0x4";
+echo "Enter key --help for manual";
+
+exit 0;
