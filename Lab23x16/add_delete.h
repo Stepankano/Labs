@@ -5,7 +5,6 @@
 #include "data.h"
 #include <malloc.h>
 
-
 void add(cell *tmp, int new_value)
 {
     if ((*tmp).value == -100)
@@ -51,18 +50,24 @@ void delete (cell *tmp, int old_value)
 {
     if ((*tmp).value == -100)
     {
+        printf("%s", "One mistake and you have made a mistake (wolf) ");
         return;
     }
     else
     {
+        printf("%c", (*tmp).value);
         if (old_value > (*tmp).value && (*tmp).right)
         {
+            printf("%s", "FR ");
             delete ((*tmp).right, old_value);
+
             return;
         }
         if (old_value < (*tmp).value && (*tmp).left)
         {
+            printf("%s", "FL ");
             delete ((*tmp).left, old_value);
+
             return;
         }
         if (old_value > (*tmp).value && !(*tmp).right)
@@ -77,33 +82,27 @@ void delete (cell *tmp, int old_value)
         }
         if (old_value == (*tmp).value)
         {
-            if ((*tmp).right)
-            {
-                cell *runner;
-                runner = (*tmp).right;
-                while ((*runner).left)
-                {
-                    runner = (*runner).left;
-                }
-                (*tmp).value = (*runner).value;
-                free(runner);
-                return;
-            }
+            printf("%s", "Find ");
             if ((*tmp).left)
             {
+                printf("%s", "L ");
                 cell *runner;
                 runner = (*tmp).left;
-                while ((*runner).right)
-                {
-                    runner = (*runner).right;
-                }
                 (*tmp).value = (*runner).value;
-                free(runner);
+                delete (runner, (*runner).value);
+                return;
+            }
+            if ((*tmp).right)
+            {
+                printf("%s", "R ");
+                cell *runner;
+                runner = (*tmp).right;
+                (*tmp).value = (*runner).value;
+                delete (runner, (*runner).value);
                 return;
             }
             free(tmp);
             return;
-            
         }
     }
 }
