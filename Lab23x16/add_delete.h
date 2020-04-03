@@ -48,7 +48,7 @@ void add(cell *tmp, int new_value)
 
 void delete (cell *tmp, int old_value)
 {
-    if ((*tmp).value == -100)
+    if ((*tmp).value == 287)
     {
         printf("%s", "One mistake and you have made a mistake (wolf) ");
         return;
@@ -58,14 +58,12 @@ void delete (cell *tmp, int old_value)
         printf("%c", (*tmp).value);
         if (old_value > (*tmp).value && (*tmp).right)
         {
-            printf("%s", "FR ");
             delete ((*tmp).right, old_value);
 
             return;
         }
         if (old_value < (*tmp).value && (*tmp).left)
         {
-            printf("%s", "FL ");
             delete ((*tmp).left, old_value);
 
             return;
@@ -82,27 +80,60 @@ void delete (cell *tmp, int old_value)
         }
         if (old_value == (*tmp).value)
         {
-            printf("%s", "Find ");
-            if ((*tmp).left)
+            if ((*tmp).left && (*tmp).right)
             {
-                printf("%s", "L ");
                 cell *runner;
-                runner = (*tmp).left;
-                (*tmp).value = (*runner).value;
-                delete (runner, (*runner).value);
-                return;
+                if (tmp->left->right)
+                {
+                    runner = (*tmp).left;
+                    while ((*runner).right)
+                    {
+                        runner = (*runner).right;
+                    }
+                    (*tmp).value = (*runner).value;
+                    delete (runner, (*runner).value);
+                    return;
+                }
+
+                if (tmp->right->left)
+                {
+                    runner = (*tmp).right;
+                    while ((*runner).left)
+                    {
+                        runner = (*runner).left;
+                    }
+                    (*tmp).value = (*runner).value;
+                    delete (runner, (*runner).value);
+                    return;
+                }
             }
-            if ((*tmp).right)
+            if ((*tmp).right || (*tmp).left)
             {
-                printf("%s", "R ");
-                cell *runner;
-                runner = (*tmp).right;
-                (*tmp).value = (*runner).value;
-                delete (runner, (*runner).value);
-                return;
+                if (tmp->left)
+                {
+                    tmp->value = tmp->left->value;
+                    if (!tmp->left->right && !tmp->left->left)
+                    {
+                        free(tmp->left);
+                        tmp->left = NULL;
+                        return;
+                    }
+                    delete (tmp->left, tmp->left->value);
+                    return;
+                }
+                if (tmp->right)
+                {
+                    tmp->value = tmp->right->value;
+                    if (!tmp->right->right && !tmp->right->left)
+                    {
+                        free(tmp->right);
+                        tmp->right = NULL;
+                        return;
+                    }
+                    delete (tmp->right, tmp->right->value);
+                    return;
+                }
             }
-            free(tmp);
-            return;
         }
     }
 }
