@@ -48,7 +48,7 @@ void add(cell *tmp, int new_value)
 
 void delete (cell *tmp, int old_value)
 {
-    if ((*tmp).value == 287)
+    if ((*tmp).value == -100)
     {
         printf("%s", "One mistake and you have made a mistake (wolf) ");
         return;
@@ -134,6 +134,8 @@ void delete (cell *tmp, int old_value)
                     return;
                 }
             }
+            free(tmp);
+            return;
         }
     }
 }

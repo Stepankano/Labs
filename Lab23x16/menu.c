@@ -22,7 +22,7 @@ int menu(void)
 
 int main()
 {
-    cell root = {NULL, NULL, 287};
+    cell root = {NULL, NULL, -100};
     cell *root_tmp = &root;
     printf("%s\n", "Welcome!");
     int k = 0;
