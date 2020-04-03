@@ -7,7 +7,7 @@ typedef cell
 {
     cell *left;
     cell *right;
-    int value;
+    int value; 
 }
 this_cell;
 
