@@ -50,8 +50,7 @@ int main()
             printf("%s ", "Enter a char:");
             scanf("%c", &value);
             int val = value;
-            delete (root_tmp, val);
-
+            delete (root_tmp, root_tmp, val);
             printf("\n");
         }
         break;
