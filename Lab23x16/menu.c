@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 #include "data.h"
 #include "add_delete.h"
 #include "text_output.h"
@@ -23,7 +22,7 @@ int menu(void)
 
 int main()
 {
-    cell root = {NULL, NULL, -100};
+    cell root = {NULL, NULL, 287};
     cell *root_tmp = &root;
     printf("%s\n", "Welcome!");
     int k = 0;
@@ -52,7 +51,7 @@ int main()
             scanf("%c", &value);
             int val = value;
             delete (root_tmp, val);
-            
+
             printf("\n");
         }
         break;
@@ -62,19 +61,23 @@ int main()
             text_out(root_tmp, 0);
         }
         break;
-        case 4:{
-           
-            check_symmetry(root_tmp);
-            printf("\n");
+        case 4:
+        {
+            if (proof(root_tmp, root_tmp))
+            {
+                printf("%s\n", "The tree is symetric.");
+            }
+            else
+                printf("%s\n", "The tree isn't symetric.");
         }
-            break;
+        break;
         case 5:
         {
             int i, r;
             srand(time(NULL));
             for (i = 0; i < 10; i++)
             {
-                add(root_tmp, (rand()%95+32));
+                add(root_tmp, (rand() % 95 + 32));
             }
         }
         break;

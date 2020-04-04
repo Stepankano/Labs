@@ -7,7 +7,7 @@
 
 void add(cell *tmp, int new_value)
 {
-    if ((*tmp).value == -100)
+    if ((*tmp).value == 287)
     {
         (*tmp).value = new_value;
         (*tmp).left = NULL;
