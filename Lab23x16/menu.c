@@ -6,6 +6,7 @@
 #include "data.h"
 #include "add_delete.h"
 #include "text_output.h"
+#include "check_symmetry.h"
 
 int menu(void)
 {
@@ -61,8 +62,11 @@ int main()
             text_out(root_tmp, 0);
         }
         break;
-        case 4:
-            //function
+        case 4:{
+           
+            check_symmetry(root_tmp);
+            printf("\n");
+        }
             break;
         case 5:
         {
