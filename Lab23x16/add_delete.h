@@ -30,6 +30,10 @@ void add(cell *tmp, int new_value)
         if (new_value > (*tmp).value && !(*tmp).right)
         {
             (*tmp).right = (cell *)malloc(sizeof(cell));
+            if((tmp->right) == NULL){
+                printf("%s\n", "Out of memory");
+                return;
+            }
             (*(*tmp).right).left = NULL;
             (*(*tmp).right).right = NULL;
             (*(*tmp).right).value = new_value;
@@ -38,6 +42,10 @@ void add(cell *tmp, int new_value)
         if (new_value < (*tmp).value && !(*tmp).left)
         {
             (*tmp).left = (cell *)malloc(sizeof(cell));
+             if((tmp->left) == NULL){
+                printf("%s\n", "Out of memory");
+                return;
+            }
             (*(*tmp).left).left = NULL;
             (*(*tmp).left).right = NULL;
             (*(*tmp).left).value = new_value;
