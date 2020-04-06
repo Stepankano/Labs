@@ -57,22 +57,29 @@ int main()
             printf("%s ", "Enter a char:");
             scanf("%c", &value);
             int val = value;
-            if (!root_tmp->left && !root_tmp->right && val == root_tmp->value)
+            if (root_tmp)
             {
-                root_tmp = destroy(root_tmp);
-            }
-            else
-            {
-                if (!root_tmp->left && !root_tmp->right && val != root_tmp->value)
+                if (!root_tmp->left && !root_tmp->right && val == root_tmp->value)
                 {
-                    printf("%s\n", "This char isn`t exist");
+                    root_tmp = destroy(root_tmp);
                 }
                 else
                 {
-                    delete (root_tmp, root_tmp, val);
+                    if (!root_tmp->left && !root_tmp->right && val != root_tmp->value)
+                    {
+                        printf("%s\n", "This char isn`t exist");
+                    }
+                    else
+                    {
+                        delete (root_tmp, root_tmp, val);
+                    }
                 }
+                delete (root_tmp, root_tmp, val);
             }
-            delete (root_tmp, root_tmp, val);
+            else
+            {
+                printf("%s\n", "Tree is empty");
+            }
         }
         break;
         case 3:
