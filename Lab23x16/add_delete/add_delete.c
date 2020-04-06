@@ -1,8 +1,6 @@
-#ifndef ADD_DELETE_H
-#define ADD_DELETE_H
-
 #include <stdio.h>
-#include "data.h"
+#include "../data.h"
+#include "add_delete.h"
 #include <malloc.h>
 
 void add(cell *tmp, int new_value)
@@ -157,4 +155,3 @@ void delete (cell *tmp, cell *tmp2, int old_value)
         }
     }
 }
-#endif

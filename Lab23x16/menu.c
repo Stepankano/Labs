@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 #include "data.h"
-#include "add_delete.h"
-#include "text_output.h"
-#include "check_symmetry.h"
+#include "./add_delete/add_delete.h"
+#include "./output/text_output.h"
+#include "./function/check_symmetry.h"
 
 int menu(void)
 {
@@ -62,12 +62,24 @@ int main()
         break;
         case 4:
         {
-            if (proof(root_tmp, root_tmp))
+            if (root_tmp)
             {
-                printf("%s\n", "The tree is symetric.");
+                if (root_tmp->left && root_tmp->right)
+                {
+                    if (proof(root_tmp->left, root_tmp->right))
+                        printf("%s\n", "The tree is symetric.");
+                    else
+                        printf("%s\n", "The tree isn't symetric.");
+                }
+                else
+                {
+                    printf("%s\n", "The tree is symetric.");
+                }
             }
             else
-                printf("%s\n", "The tree isn't symetric.");
+            {
+                printf("%s\n", "The tree is empty.");
+            }
         }
         break;
         case 5:
