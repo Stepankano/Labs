@@ -22,8 +22,8 @@ int menu(void)
 
 int main()
 {
-    cell root = {NULL, NULL, 287};
-    cell *root_tmp = &root;
+    //cell root = {NULL, NULL, 287};
+    cell *root_tmp = NULL;
     printf("%s\n", "Welcome!");
     int k = 0;
 
@@ -39,7 +39,14 @@ int main()
             printf("%s ", "Enter a char:");
             scanf("%c", &value);
             int val = value;
-            add(root_tmp, val);
+            if (!root_tmp)
+            {
+                root_tmp = create(val);
+            }
+            else
+            {
+                add(root_tmp, val);
+            }
             printf("\n");
         }
         break;
@@ -50,6 +57,21 @@ int main()
             printf("%s ", "Enter a char:");
             scanf("%c", &value);
             int val = value;
+            if (!root_tmp->left && !root_tmp->right && val == root_tmp->value)
+            {
+                root_tmp = destroy(root_tmp);
+            }
+            else
+            {
+                if (!root_tmp->left && !root_tmp->right && val != root_tmp->value)
+                {
+                    printf("%s\n", "This char isn`t exist");
+                }
+                else
+                {
+                    delete (root_tmp, root_tmp, val);
+                }
+            }
             delete (root_tmp, root_tmp, val);
             printf("\n");
         }
@@ -73,7 +95,14 @@ int main()
                 }
                 else
                 {
-                    printf("%s\n", "The tree is symetric.");
+                    if (!root_tmp->left && !root_tmp->right)
+                    {
+                        printf("%s\n", "The tree is symetric.");
+                    }
+                    else
+                    {
+                        printf("%s\n", "The tree isn`t symetric.");
+                    }
                 }
             }
             else
@@ -84,9 +113,12 @@ int main()
         break;
         case 5:
         {
-            int i, r;
             srand(time(NULL));
-            for (i = 0; i < 10; i++)
+            if (!root_tmp)
+            {
+                root_tmp = create((rand() % 95 + 32));
+            }
+            for (int i = 0; i < 10; i++)
             {
                 add(root_tmp, (rand() % 95 + 32));
             }

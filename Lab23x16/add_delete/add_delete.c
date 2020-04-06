@@ -3,60 +3,74 @@
 #include "add_delete.h"
 #include <malloc.h>
 
+cell *create(int new_value)
+{
+    cell *new_root = (cell *)malloc(sizeof(cell));
+    if (!new_root)
+    {
+        printf("%s\n", "Out of memory");
+    }
+    new_root->left = NULL;
+    new_root->right = NULL;
+    new_root->value = new_value;
+    return new_root;
+}
+
+cell *destroy(cell *tmp)
+{
+    free(tmp);
+    printf("%s\n", "Tree has been deleted");
+    tmp = NULL;
+    return tmp;
+}
+
 void add(cell *tmp, int new_value)
 {
-    if ((*tmp).value == 287)
+
+    if (new_value > (*tmp).value && (*tmp).right)
     {
-        (*tmp).value = new_value;
-        (*tmp).left = NULL;
-        (*tmp).right = NULL;
+        add((*tmp).right, new_value);
         return;
     }
-    else
+    if (new_value < (*tmp).value && (*tmp).left)
     {
-        if (new_value > (*tmp).value && (*tmp).right)
-        {
-            add((*tmp).right, new_value);
-            return;
-        }
-        if (new_value < (*tmp).value && (*tmp).left)
-        {
-            add((*tmp).left, new_value);
-            return;
-        }
+        add((*tmp).left, new_value);
+        return;
+    }
 
-        if (new_value > (*tmp).value && !(*tmp).right)
+    if (new_value > (*tmp).value && !(*tmp).right)
+    {
+        (*tmp).right = (cell *)malloc(sizeof(cell));
+        if ((tmp->right) == NULL)
         {
-            (*tmp).right = (cell *)malloc(sizeof(cell));
-            if((tmp->right) == NULL){
-                printf("%s\n", "Out of memory");
-                return;
-            }
-            (*(*tmp).right).left = NULL;
-            (*(*tmp).right).right = NULL;
-            (*(*tmp).right).value = new_value;
+            printf("%s\n", "Out of memory");
             return;
         }
-        if (new_value < (*tmp).value && !(*tmp).left)
+        (*(*tmp).right).left = NULL;
+        (*(*tmp).right).right = NULL;
+        (*(*tmp).right).value = new_value;
+        return;
+    }
+    if (new_value < (*tmp).value && !(*tmp).left)
+    {
+        (*tmp).left = (cell *)malloc(sizeof(cell));
+        if ((tmp->left) == NULL)
         {
-            (*tmp).left = (cell *)malloc(sizeof(cell));
-             if((tmp->left) == NULL){
-                printf("%s\n", "Out of memory");
-                return;
-            }
-            (*(*tmp).left).left = NULL;
-            (*(*tmp).left).right = NULL;
-            (*(*tmp).left).value = new_value;
+            printf("%s\n", "Out of memory");
             return;
         }
+        (*(*tmp).left).left = NULL;
+        (*(*tmp).left).right = NULL;
+        (*(*tmp).left).value = new_value;
+        return;
     }
 }
 
 void delete (cell *tmp, cell *tmp2, int old_value)
 {
-    if ((*tmp).value == -100)
+    if (!tmp)
     {
-        printf("%s\n", "One mistake and you have made a mistake (wolf) ");
+        printf("%s\n", "Tree empty ");
         return;
     }
     else
@@ -76,12 +90,12 @@ void delete (cell *tmp, cell *tmp2, int old_value)
         }
         if (old_value > (*tmp).value && !(*tmp).right)
         {
-            printf("%s", "One mistake and you have made a mistake (wolf) ");
+            printf("\n%s\n", "One mistake and you have made a mistake (wolf) ");
             return;
         }
         if (old_value < (*tmp).value && !(*tmp).left)
         {
-            printf("%s", "One mistake and you have made a mistake (wolf) ");
+            printf("\n%s\n", "One mistake and you have made a mistake (wolf) ");
             return;
         }
         if (old_value == (*tmp).value)

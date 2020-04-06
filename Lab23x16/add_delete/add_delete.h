@@ -2,6 +2,8 @@
 #define ADD_DELETE_H
 #include "../data.h"
 
+cell *create(int);
+cell *destroy(cell *);
 
 void add(cell *, int);
 
