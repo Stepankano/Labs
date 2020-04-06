@@ -75,7 +75,6 @@ void delete (cell *tmp, cell *tmp2, int old_value)
     }
     else
     {
-        printf("%c", (*tmp).value);
         if (old_value > (*tmp).value && (*tmp).right)
         {
             delete ((*tmp).right, tmp, old_value);

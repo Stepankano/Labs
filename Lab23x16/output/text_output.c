@@ -8,7 +8,7 @@ void text_out(cell *tmp, int space)
 {
     if (!tmp)
     {
-        printf("%s\n", "Tree empty");
+        printf("%s\n", "Tree is empty");
         return ;
     }
     int i = space;

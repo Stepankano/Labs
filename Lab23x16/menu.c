@@ -22,7 +22,7 @@ int menu(void)
 
 int main()
 {
-    //cell root = {NULL, NULL, 287};
+
     cell *root_tmp = NULL;
     printf("%s\n", "Welcome!");
     int k = 0;
@@ -73,7 +73,6 @@ int main()
                 }
             }
             delete (root_tmp, root_tmp, val);
-            printf("\n");
         }
         break;
         case 3:
@@ -89,25 +88,25 @@ int main()
                 if (root_tmp->left && root_tmp->right)
                 {
                     if (proof(root_tmp->left, root_tmp->right))
-                        printf("%s\n", "The tree is symetric.");
+                        printf("%s\n", "Tree is symetric.");
                     else
-                        printf("%s\n", "The tree isn't symetric.");
+                        printf("%s\n", "Tree isn't symetric.");
                 }
                 else
                 {
                     if (!root_tmp->left && !root_tmp->right)
                     {
-                        printf("%s\n", "The tree is symetric.");
+                        printf("%s\n", "Tree is symetric.");
                     }
                     else
                     {
-                        printf("%s\n", "The tree isn`t symetric.");
+                        printf("%s\n", "Tree isn`t symetric.");
                     }
                 }
             }
             else
             {
-                printf("%s\n", "The tree is empty.");
+                printf("%s\n", "Tree is empty.");
             }
         }
         break;
@@ -125,10 +124,10 @@ int main()
         }
         break;
         case 6:
-            //exit
+
             break;
         default:
-            printf("%s\n\n", "Try again)");
+            printf("%s\n", "Try again)");
             break;
         }
     }
