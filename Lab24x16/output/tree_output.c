@@ -1,7 +1,8 @@
-
+#ifndef TEXT_OUT_H
+#define TEXT_OUT_H
 #include <stdio.h>
 #include "../data.h"
-#include "text_output.h"
+#include "tree_output.h"
 
 void text_out(cell *tmp, int space)
 {
@@ -28,3 +29,5 @@ void text_out(cell *tmp, int space)
         text_out(tmp->left, space + 1);
     }
 }
+
+#endif
