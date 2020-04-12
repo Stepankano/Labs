@@ -10,7 +10,6 @@ bool
 {
     true = 1,
     false = 0
-
 };
 
 typedef cell
@@ -19,8 +18,8 @@ typedef cell
     cell *right;
     cell *parent;
     bool type; //1-int, 0-char
-    int value; 
-    char operat;
+    int value; //0 when type == char
+    char operat; // ' ' when type == int
 }
 this_cell;
 

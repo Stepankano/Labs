@@ -1,4 +1,4 @@
-#include<smth>
+#include<stdio.h>
 
 int Factorial( int a ){
 return ( a == 0 )? 0 : ( a == 1)? 1 : ( a * Factorial ( a - 1 ));
