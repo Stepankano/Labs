@@ -2,6 +2,6 @@
 #define ENTER_H
 #include "../data.h"
 
-cell * enter();
+cell * enter(cell*);
 
 #endif

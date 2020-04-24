@@ -48,20 +48,21 @@ func main() { // тут и так всё понятно
 	// complex64, complex128 - комплексные числа блеатт
 
 	var (
-		i = -30
-		j = -4
+		i = 0
+		j = 0
 		k = 0
-		l = 12
+		l = 0
 	)
 	var new_i, new_j, new_l int
-
+	fmt.Scanln(&i, &j, &l)
 	for k = 1; k < 50; k++ { // тута нет while и until, есть разные формы for
+
 		new_i = module(i-l) + min(mod(j, 10), (l*mod(k, 10))) - 20
 		new_j = mod(max((k-i), min(j, max(i-l, j-l))), 30)
 		new_l = mod((l*l), 20) - mod(max(i, j), (k+1))
 
 		if check(new_i, new_j) {
-			fmt.Print("Hit, time =", k, "\n\n")
+			fmt.Print("Hit, time = ", k, "\n\n")
 			k = 55
 		}
 

@@ -2,6 +2,7 @@
 #define TEXT_OUT_H
 #include"../data.h"
 
-void text_out(cell*,int);
+void text_out(cell*);
+void tree_out(cell*);
 
 #endif

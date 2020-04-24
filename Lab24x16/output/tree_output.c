@@ -4,30 +4,14 @@
 #include "../data.h"
 #include "tree_output.h"
 
-void text_out(cell *tmp, int space)
+void text_out(cell *tmp)
 {
-    if (!tmp)
-    {
-        printf("%s\n", "Tree is empty");
-        return ;
-    }
-    int i = space;
-    if (tmp->right)
-    {
-        text_out(tmp->right, space + 1);
-    }
-    printf("%d", i);
-    while (i > 0)
-    {
-        printf("%s", "--");
-        i -= 1;
-    }
-    printf("%c\n", tmp->value);
-    i -= 1;
-    if (tmp->left)
-    {
-        text_out(tmp->left, space + 1);
-    }
+   
+}
+
+void tree_out(cell *tmp)
+{
+   
 }
 
 #endif
