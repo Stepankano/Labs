@@ -4,6 +4,14 @@
 #include "../builder/build.h"
 #include "../cleaner/cleaner.h"
 
+#define add_char                 \
+    tmp = add_char(symbol, tmp); \
+    printf("%c ", symbol);
+
+#define add_int                 \
+    tmp = add_int(number, tmp); \
+    printf("%d ", number);
+
 #define parse_num(a)                              \
     number = val - 48;                            \
     while (scanf("%c", &symbol) != EOF)           \
@@ -25,82 +33,75 @@
     }                                             \
     if (!corruption)                              \
     {                                             \
-        tmp = add_int(number * a, tmp);           \
-        printf("%d ", (number * a));              \
+        number *= a;                              \
+        add_int;                                  \
         number = 0;                               \
     }
 
 #define Errur(pos)                                            \
     printf("%s %d %s\n", "Syntax error in", pos, "position"); \
-    clean_tree(tmp);                                               \
+    clean_tree(tmp);                                          \
     return NULL;
 
-//надо подключить остальные хэдэры и пофиксить расположение для доступа data.h если убирать это в отдельную папку
-/*int parse(cell* tmp)*/
-cell *parse(cell *tmp) //Строка для тестов
+cell *parse(cell *tmp)
 {
-    char symbol;        //сам символ
-    int number = 0;     //число
-    int corruption = 0; //повреждение(да или нет)
-    int pos = 0;
+    char symbol;
+    int number = 0, corruption = 0, pos = 0;
     while (scanf("%c", &symbol) != '\n')
     {
         int val = symbol;
         pos++;
-        if ((val > 47) && (val < 58)) //если встретилась цифра то строим число
+        if ((val > 47) && (val < 58))
         {
             parse_num(1);
         }
-        else if (((val > 39) && (val < 44)) || (val == 47) || (val == 136) || ((val > 96) && (val < 123))) //если встретился символ(не минус)
+        else if (((val > 39) && (val < 44)) || (val == 47) || (val == 136) || ((val > 96) && (val < 123)))
         {
-            tmp = add_char(symbol, tmp);
-            printf("%c ", symbol); //Строка для тестов
+            add_char;
         }
-        else if (val == 45) //если встретился минус
+        else if (val == 45)
         {
-            scanf("%c", &symbol); //считываем следующий символ
-            val = symbol;         //
-            pos++;                //
-            if (symbol == ' ')    //если следующий символ - пробел, то запоминаем минус просто как символ
+            scanf("%c", &symbol);
+            val = symbol;
+            pos++;
+            if (symbol == ' ')
             {
-                tmp = add_char('-', tmp);
-                printf("%c ", '-'); //Строка для тестов
+                symbol = '-';
+                add_char;
             }
-            else if ((val > 47) && (val < 58)) //если встретилась цифра то строим число
+            else if ((val > 47) && (val < 58))
             {
                 parse_num(-1);
             }
-            else if ((val > 96) && (val < 123)) //если встретилась буква, то делаем замену символа по типу -а = А
+            else if ((val > 96) && (val < 123))
             {
                 val = val - 32;
                 symbol = val;
-                tmp = add_char(symbol, tmp);
-                printf("%c ", symbol); //Строка для тестов
+                add_char;
             }
-            else //Если в функцию попали запрещённые символы то отмечаем что данные повреждены(опть повторяющийся кусок кода)
+            else
             {
-                
                 Errur(pos);
             }
         }
         else if (symbol == ' ')
         {
             continue;
-        } //Если пробел то продолжаем цикл, всё в порядке
+        }
         else if (symbol == '\n')
         {
             pos--;
             return tmp;
         }
-        else //Если в функцию попали запрещённые символы то отмечаем что данные повреждены
+        else
         {
             Errur(pos);
         }
         if (corruption)
         {
-            /* clearer_tree(tmp);*/
+
             return NULL;
-        } //Возвращает единицу если данные повреждены
+        }
     }
     return tmp;
 }

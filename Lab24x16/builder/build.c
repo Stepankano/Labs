@@ -49,7 +49,7 @@ cell *add_char(char sign, cell *tmp)
     else
     {
 
-        if ((sign == '*') || (sign == '/') || (sign == '(') || (sign == '^'))
+        if ((sign == '*') || (sign == '/')  || (sign == '^'))
         {
             Cret(tmp->left, cell);
             tmp->left->val.oper = sign;
@@ -61,7 +61,7 @@ cell *add_char(char sign, cell *tmp)
         }
         else if ((sign == '+') || (sign == '-'))
         {
-            while (((tmp->parent) != NULL) && (!(tmp->left) || (tmp->right)))
+            while (((tmp->parent) != NULL) && (!(tmp->left) || (tmp->right)) && !(tmp->val.oper == '(' && tmp->type == 0))
             {
                 tmp = tmp->parent;
             }
