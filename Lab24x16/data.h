@@ -2,7 +2,6 @@
 #define DATA_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #define cell struct cell
 #define invent union invent
 #define bool enum bool
