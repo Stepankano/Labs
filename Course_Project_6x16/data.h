@@ -70,8 +70,8 @@ typedef inf_test
         char first_name;
     }
     Fio;
-    inf_test * next;
-    inf_test * last;
+    inf_test * next = NULL;
+    inf_test * last = NULL;
     int age;
 }
 teste;
