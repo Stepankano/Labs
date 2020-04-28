@@ -230,7 +230,7 @@ typedef inf_test
 {
     FIO
     {
-        str(type);
+        str(last_name);
         char first_name;
     }
     Fio;
