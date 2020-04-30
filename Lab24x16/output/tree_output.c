@@ -1,5 +1,3 @@
-#ifndef TEXT_OUT_H
-#define TEXT_OUT_H
 #include <stdio.h>
 #include "../data.h"
 #include "tree_output.h"
@@ -32,4 +30,3 @@ void tree_out(cell *tmp, int space)
     }
 }
 
-#endif
