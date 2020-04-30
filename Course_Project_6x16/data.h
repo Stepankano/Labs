@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#define str(a) char a[50];
+#define str(a) char a[20];
 
 /*
 #define info_stud struct info_student
@@ -12,21 +12,22 @@
 #define exam struct exam
 #define offset struct offset
 
+
 typedef info_stud
 {
     FNP
     {
-        char last_name[50]; //пока что костыль, но может ли  фамилия содержать >  50 символов? переделать в динамический массив
+        str(last_name); 
         char first_name;
         char patronymic;
     }
-    full_name;
+    fnp;
 
     enum sex
     {
         F,
         M
-    } this_sex;
+    }sex;
 
     int group_num;
 
@@ -68,7 +69,7 @@ typedef info_stud
 inf;
 */
 
-/*
+
 #define info_pc struct info_pc
 #define CPU struct CPU
 #define GPU struct GPU
@@ -119,7 +120,7 @@ typedef info_pc
     info_pc *last;
 }
 pc;
-*/
+
 
 /*
 #define info_exam struct info_exam
@@ -223,6 +224,7 @@ typedef info_school
 }
 puple;
 */
+/*
 #define inf_test struct inf_test
 #define FIO struct FIO
 
@@ -239,7 +241,7 @@ typedef inf_test
     inf_test *last;
 }
 teste;
-
-#define select_type inf_test
+*/
+#define select_type info_pc
 
 #endif

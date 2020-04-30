@@ -2,6 +2,6 @@
 #define OUTPUT_H
 #include "../data.h"
 
-void output(select_type *);
+void out_inf_stud(info_stud *);
 
 #endif

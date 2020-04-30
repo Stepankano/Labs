@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
@@ -37,7 +38,6 @@ void func(cell *tmp)
             }
         }
     }
-
     if (tmp->left)
     {
         func(tmp->left);
@@ -46,6 +46,6 @@ void func(cell *tmp)
     {
         func(tmp->right);
     }
-    
     return;
 }
+

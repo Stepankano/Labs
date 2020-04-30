@@ -1,27 +1,20 @@
 #include <stdio.h>
 #include "data.h"
 
-#define opr(a)                             \
-    _Generic((a),                          \
-             int                           \
-             : printf("%s\n", "integer"),  \
-               char                        \
-             : printf("%s\n", "char"),     \
-               inf_test                    \
-             : printf("%s\n", "inf_test"), \
-               default                     \
-             : printf("%s\n", "errur"))
+typedef struct meme
+{
+
+  enum pol
+  {
+    tutu,
+    pepe
+  } pol;
+}meme;
 
 int main()
 {
-    int a = 7;
-    char b = 5;
-    float h;
-    inf_test mem;
-    opr(a);
-    opr(b);
-    opr(mem);
-    opr(h);
+meme ruks = {.pol = tutu};
+printf("%s", (ruks.pol == tutu)?"tutu":"pepe"); 
 
-    return 0;
+  return 0;
 }

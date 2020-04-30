@@ -55,7 +55,7 @@ cell *parse(cell *tmp)
         {
             parse_num(1);
         }
-        else if (((val > 39) && (val < 44)) || (val == 47) || (val == 136) || ((val > 96) && (val < 123)))
+        else if (((val > 39) && (val < 44)) || (val == 47) || (val == 94) || ((val > 96) && (val < 123)))
         {
             add_char;
         }
