@@ -75,7 +75,7 @@ inf;
 #define GPU struct GPU
 #define HDD struct HDD
 #define control struct control
-
+/*
 typedef info_pc
 {
     str(last_name); //имя
@@ -120,7 +120,7 @@ typedef info_pc
     info_pc *last;
 }
 pc;
-
+*/
 
 /*
 #define info_exam struct info_exam
@@ -137,7 +137,7 @@ typedef info_exam
     }
     full_name;
 
-    enum exam_sex
+    enum sex
     {
         F,
         M
@@ -198,6 +198,7 @@ aero;
 
 /*
 #define info_school struct info_school
+#define FNP struct FNP
 
 typedef info_school
 {
@@ -209,10 +210,10 @@ typedef info_school
     }
     full_name;
 
-    enum school_sex
+    enum sex
     {
-        sex_F,
-        sex_M
+        F,
+        M
     } this_sex;
     int class_num;
     char lit_class;
@@ -224,7 +225,8 @@ typedef info_school
 }
 puple;
 */
-/*
+
+
 #define inf_test struct inf_test
 #define FIO struct FIO
 
@@ -241,7 +243,7 @@ typedef inf_test
     inf_test *last;
 }
 teste;
-*/
-#define select_type info_pc
+
+#define select_type inf_test
 
 #endif

@@ -7,22 +7,6 @@
 #include "output/output.h"
 #include "re_builder/re_builder.h"
 #include "writer/writer.h"
-#define def_output(a)             \
-    _Generic((a),                 \
-             info_stud            \
-             : out_inf_stud(a);   \
-             info_pc              \
-             : out_inf_pc(a);     \
-             info_exam            \
-             : out_inf_exam(a);   \
-             info_passenger       \
-             : out_inf_pass(a);   \
-             info_school          \
-             : out_inf_school(a); \
-             inf_test             \
-             : out_inf_test(a);   \
-             default              \
-             : printf("%s", Errur))
 
 #define def_function(a)            \
     _Generic((a),                  \
@@ -50,7 +34,7 @@ int main(int argc, char *argv[])
         printf("%s\n", "Welcome!");
         if (argv[1][0] == '-' && argv[1][1] == 'f')
         {
-            out_inf_stud();
+            output(root_tmp);
             while(root_tmp->last){
                 root_tmp = root_tmp->last;
             }
