@@ -37,13 +37,17 @@ int main()
             getchar();
             clean_tree(root_tmp);
             root_tmp = parse(root_tmp);
+
             if (!root_tmp)
             {
                 printf("%s\n", "Errur");
             }
-            while (root_tmp->parent)
+            if (root_tmp)
             {
-                root_tmp = root_tmp->parent;
+                while (root_tmp->parent)
+                {
+                    root_tmp = root_tmp->parent;
+                }
             }
             printf("\n");
         }
@@ -51,7 +55,7 @@ int main()
         case 2:
         {
             getchar();
-            func(root_tmp);
+            func_num_16(root_tmp);
             printf("\n");
         }
         break;

@@ -77,37 +77,7 @@ cell *add_char(char sign, cell *tmp)
             tmp->right->parent = tmp;
             return tmp->right;
         }
-        else if (sign == ')')
-        {
-            while (tmp->parent && tmp->parent->val.oper != '(')
-            {
-                tmp = tmp->parent;
-            }
-            while (tmp->right)
-            {
-                tmp = tmp->right;
-            }
-            if (tmp->right)
-            {
-                cell *high = tmp->right;
-                high->parent = NULL;
-                Cret(high->parent, cell);
-                high->parent->val.oper = ')';
-                high->parent->type = 0;
-                high->parent->right = high;
-                high->parent->left = NULL;
-                high->parent->parent = tmp;
-                tmp->right = high->parent;
-            }
-            else
-            {
-                Cret(tmp->right, cell);
-                tmp->right->type = 0;
-                tmp->right->val.oper = ')';
-                tmp->right->right = tmp->right->left = NULL;
-                tmp->right->parent = tmp;
-            }
-        }
+        
         else
         {
             Cret(tmp->right, cell);

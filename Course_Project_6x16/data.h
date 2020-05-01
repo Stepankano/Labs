@@ -5,19 +5,17 @@
 #include <conio.h>
 #define str(a) char a[20];
 
-/*
 #define info_stud struct info_student
 #define FNP struct FNP
 #define marks struct marks
 #define exam struct exam
 #define offset struct offset
 
-
 typedef info_stud
 {
     FNP
     {
-        str(last_name); 
+        str(last_name);
         char first_name;
         char patronymic;
     }
@@ -25,9 +23,9 @@ typedef info_stud
 
     enum sex
     {
-        F,
-        M
-    }sex;
+        F = 'F',
+        M = 'M'
+    } sex;
 
     int group_num;
 
@@ -37,18 +35,18 @@ typedef info_stud
         {
             enum la // linear algebra
             {
-                la_yes = 1,
-                la_no = 0
+                yes = 'y',
+                no = 'n'
             } this_la;
             enum el // english language
             {
-                el_yes = 1,
-                el_no = 0
+                yes = 'y',
+                no = 'n'
             } this_el;
-            enum lab // labs
+            enum lab // l.a.b.s. - Liberty. Advertisement. Bureaucracy. Solving
             {
-                lab_yes = 1,
-                lab_no = 0
+                yes = 'y',
+                no = 'n'
             } this_lab;
         }
         off;
@@ -67,15 +65,13 @@ typedef info_stud
     info_stud *last;
 }
 inf;
-*/
-
 
 #define info_pc struct info_pc
 #define CPU struct CPU
 #define GPU struct GPU
 #define HDD struct HDD
 #define control struct control
-/*
+
 typedef info_pc
 {
     str(last_name); //имя
@@ -120,12 +116,10 @@ typedef info_pc
     info_pc *last;
 }
 pc;
-*/
 
-/*
 #define info_exam struct info_exam
 #define marks struct marks
-#define FNP struct FNP
+//#define FNP struct FNP
 
 typedef info_exam
 {
@@ -141,12 +135,12 @@ typedef info_exam
     {
         F,
         M
-    } this_sex;
+    } sex;
     int school_number;
     enum medal
     {
-        medal_T = 1,
-        medal_F = 0
+        yes = 'y',
+        no = 'n'
     } this_medal;
     marks
     {
@@ -158,18 +152,16 @@ typedef info_exam
     mar;
     enum essay
     {
-        essay_T = 1,
-        essay_F = 0
+        T = 1,
+        F = 0
     } this_essay;
     info_exam *next;
     info_exam *last;
 }
 ex;
-*/
 
-/*
 #define info_passenger struct info_passenger
-#define FNP struct FNP
+//#define FNP struct FNP
 
 typedef info_passenger
 {
@@ -186,17 +178,15 @@ typedef info_passenger
     str(time);
     enum transit
     {
-        transit_T = 1,
-        transit_F = 0
+        yes = 'y',
+        no = 'n'
     } this_transit;
     int children_count;
     info_passenger *next;
     info_passenger *last;
 }
 aero;
-*/
 
-/*
 #define info_school struct info_school
 #define FNP struct FNP
 
@@ -212,8 +202,8 @@ typedef info_school
 
     enum sex
     {
-        F,
-        M
+        F = 'F',
+        M = 'M'
     } this_sex;
     int class_num;
     char lit_class;
@@ -224,26 +214,27 @@ typedef info_school
     info_school *last;
 }
 puple;
-*/
 
 
-#define inf_test struct inf_test
-#define FIO struct FIO
+#define select_type info_school
 
-typedef inf_test
+#define cell struct cell
+typedef cell
 {
-    FIO
-    {
-        str(last_name);
-        char first_name;
-    }
-    Fio;
-    int age;
-    inf_test *next;
-    inf_test *last;
+    enum type{
+        st_type,
+        pc_type,
+        ex_type,
+        ps_type,
+        sc_type
+    }type;
+    union data{
+        info_stud st;
+        info_pc pc;
+        info_exam ex;
+        info_passenger ps;
+        info_school sc;
+    }data;
 }
-teste;
-
-#define select_type inf_test
-
+this_cell;
 #endif
