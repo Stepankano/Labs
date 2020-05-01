@@ -16,15 +16,14 @@ void func(cell *tmp)
             {
                 if (tmp->left)
                 {
-                     cell *del,*del1;
-                     del = tmp;
-                     del1= del->right;
+                    cell *del, *del1;
+                    del = tmp;
+                    del1 = del->right;
                     tmp = tmp->parent;
                     tmp->left->left->parent = tmp;
                     tmp->left = tmp->left->left;
                     free(del);
                     free(del1);
-                    
                 }
                 else
                 {
@@ -33,7 +32,6 @@ void func(cell *tmp)
                     free(tmp->left->right);
                     free(tmp->left);
                     tmp->left = NULL;
-                    
                 }
             }
         }
@@ -48,4 +46,3 @@ void func(cell *tmp)
     }
     return;
 }
-
