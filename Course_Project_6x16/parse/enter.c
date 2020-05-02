@@ -39,8 +39,7 @@ void fill_student(void)
   scanf("%1d", &form.mks.ez.dm);
   form.next = NULL;
   form.last = NULL;
-  cell zip = {.type = st_type, .data.st = form};
-  writer(zip);
+  //writer(form);
 }
 
 void fill_pc(void)
@@ -76,8 +75,8 @@ void fill_pc(void)
   scanf("%20s", &form.OC);
   form.next = NULL;
   form.last = NULL;
-  cell zip = {.type = pc_type, .data.pc = form};
-  writer(zip);
+  
+  //writer(form);
 }
 
 void fill_exam(void)
@@ -112,8 +111,7 @@ void fill_exam(void)
   form.this_essay = (essay == 'y') ? yes_essay : no_essay;
   form.next = NULL;
   form.last = NULL;
-  cell zip = {.type = ex_type, .data.ex = form};
-  writer(zip);
+  //writer(form);
 }
 
 void fill_passenger(void)
@@ -138,8 +136,7 @@ void fill_passenger(void)
   scanf("%d", &form.children_count);
   form.next = NULL;
   form.last = NULL;
-  cell zip = {.type = ps_type, .data.ps = form};
-  writer(zip);
+  //writer(form);
 }
 
 void fill_school(void)
@@ -168,8 +165,7 @@ void fill_school(void)
   scanf("%20s", &form.army);
   form.next = NULL;
   form.last = NULL;
-  cell zip = {.type = sc_type, .data.sc = form};
-  writer(zip);
+  //writer(form);
 }
 
 int main()

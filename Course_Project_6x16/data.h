@@ -218,23 +218,5 @@ puple;
 
 #define select_type info_school
 
-#define cell struct cell
-typedef cell
-{
-    enum type{
-        st_type,
-        pc_type,
-        ex_type,
-        ps_type,
-        sc_type
-    }type;
-    union data{
-        info_stud st;
-        info_pc pc;
-        info_exam ex;
-        info_passenger ps;
-        info_school sc;
-    }data;
-}
-this_cell;
+
 #endif
