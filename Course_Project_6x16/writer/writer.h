@@ -2,6 +2,6 @@
 #define WRITER_H
 #include "../data.h"
 
-void writer(cell);
+void writer(select_type);
 
 #endif

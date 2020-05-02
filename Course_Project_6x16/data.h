@@ -216,7 +216,7 @@ typedef info_school
 puple;
 
 
-#define select_type info_school
+#define select_type info_stud
 
 
 #endif

@@ -3,6 +3,6 @@
 #include "../data.h"
 #include "../output/output.h"
 
-void function(select_type *);
+void best_students(select_type *);
 
 #endif

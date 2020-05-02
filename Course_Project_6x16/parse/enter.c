@@ -21,13 +21,13 @@ void fill_student(void)
   printf("%s", "Group number - ");
   scanf("%d", &form.group_num);
   printf("%s", "Offset linear algebra(y/n) - ");
-  scanf("%c", &offsets);
+  scanf("%s", &offsets);
   form.mks.off.this_la = (offsets == 'y') ? la_yes : la_no;
   printf("%s", "English language(y/n) - ");
-  scanf("%c", &offsets);
+  scanf("%s", &offsets);
   form.mks.off.this_el = (offsets == 'y') ? el_yes : el_no;
   printf("%s", "L.A.B.S(y/n) - ");
-  scanf("%c", &offsets);
+  scanf("%s", &offsets);
   form.mks.off.this_lab = (offsets == 'y') ? lab_yes : lab_no;
   printf("%s", "Mark for mathematical analysis - ");
   scanf("%1d", &form.mks.ez.ma);
@@ -200,6 +200,7 @@ int main()
     else
     {
       printf("%s\n", "Goodbye");
+      return 0;
     }
   }
 

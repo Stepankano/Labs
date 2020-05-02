@@ -77,7 +77,26 @@ cell *add_char(char sign, cell *tmp)
             tmp->right->parent = tmp;
             return tmp->right;
         }
-        
+        else if (sign == ')')
+        {
+            while ((tmp->val.oper) != '(')
+                tmp = tmp->parent;
+            while (tmp->right)
+                tmp = tmp->right;
+            Cret(tmp->right, cell);
+            tmp->right->val.oper = sign;
+            tmp->right->right = NULL;
+            tmp->right->left = NULL;
+            tmp->right->type = 0;
+            tmp->right->parent = tmp;
+            while ((tmp->val.oper) != '(')
+                tmp = tmp->parent;
+            if ((tmp->parent) && (tmp->parent->parent) && ((tmp->parent->val.oper == ('*')) || (tmp->parent->val.oper == ('/'))))
+                tmp = tmp->parent->parent;
+            while (tmp->right)
+                tmp = tmp->right;
+                return tmp;
+        }
         else
         {
             Cret(tmp->right, cell);

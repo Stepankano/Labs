@@ -4,6 +4,6 @@
 #include <stdlib.h>
 #include "../data.h"
 
-void func(cell*);
+void func_num_16(cell*);
 
 #endif

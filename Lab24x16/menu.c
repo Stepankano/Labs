@@ -62,7 +62,7 @@ int main()
         case 3:
         {
             getchar();
-            //text_out(root_tmp);
+            text_out(root_tmp);
             printf("\n");
         }
         break;
