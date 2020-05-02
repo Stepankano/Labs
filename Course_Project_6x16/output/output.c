@@ -7,7 +7,7 @@
         return;                            \
     }
 
-void output(info_stud *tmp)  //info_stud
+void output_stud(info_stud *tmp)  //info_stud
 {
     EMPT(tmp);
     printf("%25s %3s %5s %13s %15s\n", "Family N.P.", "sex", "group", "l.a. e.l. lab", "mat his dmt csc");

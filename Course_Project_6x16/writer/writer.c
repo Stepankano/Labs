@@ -18,7 +18,7 @@ void writer(info_stud inf)//info_stud - тип вводимой переменн
 */
 void writer(select_type stru)//select_type - тип вводимой переменной
 {				 
-    FILE *base = fopen("..\\database", "w+");//Открываем файл 
+    FILE *base = fopen(__NAME__, "w+");//Открываем файл 
     if (!base)
     {
         perror("Can't open file");//Если не удалось открыть файл выводим ошибку и ломаем программу

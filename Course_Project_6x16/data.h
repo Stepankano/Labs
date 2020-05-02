@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <conio.h>
 #define str(a) char a[20];
+#define __NAME__ "C:\\Users\\Praetor\\Labs\\Laba10\\Course_Project_6x16\\database"
 
 #define info_stud struct info_student
 #define FNP_stud struct FNP_stud

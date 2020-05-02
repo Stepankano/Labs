@@ -3,7 +3,7 @@
 
 #include "data.h"
 #include "extract/extract.h"
-#include "individual_function/function.h"
+#include "individual_function/best_students.h"
 #include "output/output.h"
 #include "re_builder/re_builder.h"
 #include "writer/writer.h"
@@ -27,14 +27,16 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 1)
+    //if (argc != 1)
+    if(1)
     {
         select_type *root_tmp = NULL;
-        // root_tmp = extract(root_tmp);
+         root_tmp = extract(root_tmp);
         printf("%s\n", "Welcome!");
-        if (argv[1][0] == '-' && argv[1][1] == 'f')
+       // if (argv[1][0] == '-' && argv[1][1] == 'f')
+       if(1)
         {
-            output(root_tmp);
+            output_stud(root_tmp);
             while(root_tmp->last){
                 root_tmp = root_tmp->last;
             }

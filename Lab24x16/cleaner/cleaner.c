@@ -27,8 +27,9 @@ void clean(cell *tmp)
 
 void clean_tree(cell *tmp)
 {
-    if(tmp){
-    tmp = ascencion(tmp);
-    clean(tmp);
+    if (tmp)
+    {
+        tmp = ascencion(tmp);
+        clean(tmp);
     }
 }
