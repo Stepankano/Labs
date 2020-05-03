@@ -22,7 +22,6 @@
         {                    \
             tmp = tmp->last; \
         }                    \
-        printf("High");      \
         writer(tmp);         \
     }
 

@@ -15,7 +15,7 @@ void output_stud(info_stud *tmp)  //info_stud
     for (;;)
     {
         printf("%20s %c.%c. %s  ", tmp->fnp_stud.last_name, tmp->fnp_stud.first_name, tmp->fnp_stud.patronymic, (tmp->sex_stud == F_stud) ? "F" : "M");
-        printf("%5d%4d %4d  %3d", tmp->group_num, tmp->mks.off.this_la, tmp->mks.off.this_el, tmp->mks.off.this_lab);
+        printf("%5d%4c %4c  %3c", tmp->group_num, tmp->mks.off.this_la, tmp->mks.off.this_el, tmp->mks.off.this_lab);
         printf(" %3d %3d %3d %3d\n", tmp->mks.ez.ma, tmp->mks.ez.hi, tmp->mks.ez.dm, tmp->mks.ez.cs);
         if (tmp->next)
         {
@@ -26,7 +26,6 @@ void output_stud(info_stud *tmp)  //info_stud
             return;
         }
     }
-    return;
 }
 
 void output_pc(info_pc *tmp) // info_pc

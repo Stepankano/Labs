@@ -27,20 +27,45 @@
 
 int main(int argc, char *argv[])
 {
-    //if (argc != 1)
-    if (1)
+    if (argc != 1)
     {
+        select_type *new, *tmp;
+        int size = sizeof(select_type);
+        FILE *stream;
+        stream = fopen(__NAME__, "r");
+        if (!stream)
+        {
+            perror("Не удалось открыть файл");
+            return 1;
+        }
+        new = (select_type *)malloc(size);
+        fread(new, size, 1, stream);
+        new->last = NULL;
+
+        while (!feof(stream) && new->next)
+        { //пока ксть файл
+            new->next = (select_type *)malloc(size);
+            fread(new->next, size, 1, stream);
+            new->next->last = new;
+            new = new->next;
+        }
+        fclose(stream);
+        new->next = NULL;
+        printf("Extracting...................OK\n");
+
         select_type *root_tmp = NULL;
-        root_tmp = extract(root_tmp);
+        root_tmp = new;
+        //root_tmp = extract(root_tmp);
         printf("%s\n", "Welcome!");
-        // if (argv[1][0] == '-' && argv[1][1] == 'f')
         if (root_tmp)
         {
-            if (1)
+            if (argv[1][0] == '-' && argv[1][1] == 'f')
             {
-                while (root_tmp->last!=NULL)
+                while (root_tmp->last)
                 {
+                    printf("%s\n", root_tmp->fnp_stud.last_name);
                     root_tmp = root_tmp->last;
+                    printf("%s\n", root_tmp->fnp_stud.last_name);
                 }
                 output_stud(root_tmp);
 
@@ -60,7 +85,8 @@ int main(int argc, char *argv[])
                 printf("%s", "Errur at command line");
             }
         }
-        else{
+        else
+        {
             printf("%s", "Dtabase is empty menu");
         }
     }

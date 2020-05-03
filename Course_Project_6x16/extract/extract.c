@@ -8,7 +8,7 @@
 select_type *extract(select_type *tmp)
 {
     select_type *new;
-    int size = sizeof(select_type); //размер нужной структуры
+    int size = sizeof(select_type);
     FILE *stream;
     stream = fopen(__NAME__, "r");
     if (!stream)
@@ -19,17 +19,24 @@ select_type *extract(select_type *tmp)
     new = (select_type *)malloc(size);
     fread(new, size, 1, stream);
     printf("%s\n", new->fnp_stud.last_name);
+    new->last = NULL;
+    tmp = re_build(*new, NULL);
 
-    tmp = new;
-
-    while (!feof(stream) && new->next != NULL)
+    while (!feof(stream) && new->next)
     { //пока ксть файл
-        printf("%s\n", new->next->fnp_stud.last_name);
         new->next = (select_type *)malloc(size);
         fread(new->next, size, 1, stream);
         tmp = re_build(*new->next, tmp);
+        printf("%s\n", new->next->fnp_stud.last_name);
+        new = new->next;
     }
-
+    /*
+    new = (select_type *)malloc(size);
+    fread(new, size, 1, stream);
+    tmp = re_build(*new, tmp);
+    printf("%s\n", new->fnp_stud.last_name);
+    */
     fclose(stream);
+    printf("%s\n", tmp->fnp_stud.last_name);
     return tmp;
 }
