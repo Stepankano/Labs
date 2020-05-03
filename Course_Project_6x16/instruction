@@ -9,3 +9,4 @@ gcc menu.c extract/extract.c individual_function/best_students.c output/output.c
  a.exe -p - это своя функция
  a.exe - это бан
  для определения своей структуры измените define select_type в data.h в самом низу и перекомментируйте в enter.c _generic под себя (a ещё нужную вам функцию)
+ def_function в меню - это функция ваша
