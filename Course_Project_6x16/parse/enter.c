@@ -73,7 +73,7 @@ void fill_student()
     }
   }
 }
-
+/*
 void fill_pc()
 {
   str(tmp_type);
@@ -91,13 +91,13 @@ void fill_pc()
       char offsets;
       if (!tmp)
       {
-        Cret(tmp, info_stud);
+        Cret(tmp, info_pc);
         tmp->next = NULL;
         tmp->last = NULL;
       }
       else
       {
-        Cret(tmp->next, info_stud);
+        Cret(tmp->next, info_pc);
         tmp->next->last = tmp;
         tmp = tmp->next;
         tmp->next = NULL;
@@ -159,13 +159,13 @@ void fill_exam()
       char offsets;
       if (!tmp)
       {
-        Cret(tmp, info_stud);
+        Cret(tmp, info_exam);
         tmp->next = NULL;
         tmp->last = NULL;
       }
       else
       {
-        Cret(tmp->next, info_stud);
+        Cret(tmp->next, info_exam);
         tmp->next->last = tmp;
         tmp = tmp->next;
         tmp->next = NULL;
@@ -226,13 +226,13 @@ void fill_passenger()
       char offsets;
       if (!tmp)
       {
-        Cret(tmp, info_stud);
+        Cret(tmp, info_passenger);
         tmp->next = NULL;
         tmp->last = NULL;
       }
       else
       {
-        Cret(tmp->next, info_stud);
+        Cret(tmp->next, info_passenger);
         tmp->next->last = tmp;
         tmp = tmp->next;
         tmp->next = NULL;
@@ -283,13 +283,13 @@ void fill_school()
       char offsets;
       if (!tmp)
       {
-        Cret(tmp, info_stud);
+        Cret(tmp, info_school);
         tmp->next = NULL;
         tmp->last = NULL;
       }
       else
       {
-        Cret(tmp->next, info_stud);
+        Cret(tmp->next, info_school);
         tmp->next->last = tmp;
         tmp = tmp->next;
         tmp->next = NULL;
@@ -326,7 +326,7 @@ void fill_school()
     }
   }
 }
-
+*/
 int main()
 {
   printf("%s\n", "Welcome!");

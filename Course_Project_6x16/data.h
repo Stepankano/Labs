@@ -12,7 +12,7 @@
     if (!tmp)                           \
     {                                   \
         printf("%s\n", "Out of meme");  \
-        return tmp;                     \
+        return;                         \
     }
 
 #define to_high(tmp)         \

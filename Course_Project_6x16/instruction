@@ -1,0 +1,11 @@
+
+Сначала
+gcc menu.c extract/extract.c individual_function/best_students.c output/output.c re_builder/re_builder.c -g
+и
+ gcc parse/enter.c writer/writer.c re_builder/re_builder.c -o enter.exe
+
+ enter.exe - это ввод базы данных
+ a.exe -f - это вывод бд
+ a.exe -p - это своя функция
+ a.exe - это бан
+ для определения своей структуры измените define select_type в data.h в самом низу и перекомментируйте в enter.c _generic под себя (a ещё нужную вам функцию)
