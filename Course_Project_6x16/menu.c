@@ -63,9 +63,7 @@ int main(int argc, char *argv[])
             {
                 while (root_tmp->last)
                 {
-                    printf("%s\n", root_tmp->fnp_stud.last_name);
-                    root_tmp = root_tmp->last;
-                    printf("%s\n", root_tmp->fnp_stud.last_name);
+                    root_tmp = root_tmp->last;   
                 }
                 output_stud(root_tmp);
 

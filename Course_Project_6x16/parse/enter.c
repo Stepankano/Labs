@@ -8,7 +8,7 @@
 void fill_student()
 {
   int choice = 0;
-  info_stud *tmp;
+  info_stud *tmp = NULL;
   while (choice != 2)
   {
     printf("%s\n", "Choose your option");
@@ -60,7 +60,7 @@ void fill_student()
       printf("%s", "Mark for discrete math - ");
       scanf("%1d", &tmp->mks.ez.dm);
       printf("%s", "Mark for computer science - ");
-      scanf("%1d", &tmp->mks.ez.dm);
+      scanf("%1d", &tmp->mks.ez.csc);
     }
     else if (choice != 2)
     {
@@ -78,7 +78,7 @@ void fill_pc()
 {
   str(tmp_type);
   int choice = 0;
-  info_pc *tmp;
+  info_pc *tmp = NULL;
   while (choice != 2)
   {
     printf("%s\n", "Choose your option");
@@ -146,7 +146,7 @@ void fill_exam()
 {
   char sex, medal, essay;
   int choice = 0;
-  info_exam *tmp;
+  info_exam *tmp = NULL;
   while (choice != 2)
   {
     printf("%s\n", "Choose your option");
@@ -213,7 +213,7 @@ void fill_passenger()
 {
   char transit;
   int choice = 0;
-  info_passenger *tmp;
+  info_passenger *tmp = NULL;
   while (choice != 2)
   {
     printf("%s\n", "Choose your option");
@@ -270,7 +270,7 @@ void fill_school()
 {
   char sex;
   int choice = 0;
-  info_school *tmp;
+  info_school *tmp = NULL;
   while (choice != 2)
   {
     printf("%s\n", "Choose your option");
