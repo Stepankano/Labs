@@ -60,7 +60,7 @@ void fill_student()
       printf("%s", "Mark for discrete math - ");
       scanf("%1d", &tmp->mks.ez.dm);
       printf("%s", "Mark for computer science - ");
-      scanf("%1d", &tmp->mks.ez.csc);
+      scanf("%1d", &tmp->mks.ez.cs);
     }
     else if (choice != 2)
     {
