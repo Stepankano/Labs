@@ -16,16 +16,28 @@ void writer(info_stud inf)//info_stud - тип вводимой переменн
     fclose(base);
 }
 */
-void writer(select_type stru)//select_type - тип вводимой переменной
-{				 
-    FILE *base = fopen(__NAME__, "w+");//Открываем файл 
+void writer(select_type *stru) //select_type - тип вводимой переменной
+{
+    if(!stru){
+        perror("Database is empty"); 
+        return;
+    }
+    FILE *base = fopen(__NAME__, "w"); //Открываем файл
     if (!base)
     {
-        perror("Can't open file");//Если не удалось открыть файл выводим ошибку и ломаем программу
-	return;
+        perror("Can't open file"); //Если не удалось открыть файл выводим ошибку и ломаем программу
+        return;
     }
-    //while(readselect_type(&stru))//пока есть что считывать
-	    fwrite(&stru, sizeof(stru), 1, base);//записываем 
+
+    while (stru->next)
+    { //пока есть что считывать
+        fwrite(stru, sizeof(stru), 1, base);
+        printf("%s\n",stru->fnp_stud.last_name);
+        stru = stru->next;
+        
+    }
+    fwrite(stru, sizeof(stru), 1, base);
+    printf("%s\n",stru->fnp_stud.last_name);
     fclose(base);
     return;
 }

@@ -8,13 +8,13 @@ select_type *re_build(select_type slct, select_type *tmp)
     {
         slct.last = NULL;
         slct.next = NULL;
-        *tmp = slct;
+        tmp = &slct;
         return tmp;
     }
     else
     {
         slct.last = tmp;
-        *tmp->next = slct;
-        return tmp->next;
+        tmp->next = &slct;
+        return (tmp->next);
     }
 }

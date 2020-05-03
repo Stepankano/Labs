@@ -28,32 +28,40 @@
 int main(int argc, char *argv[])
 {
     //if (argc != 1)
-    if(1)
+    if (1)
     {
         select_type *root_tmp = NULL;
-         root_tmp = extract(root_tmp);
+        root_tmp = extract(root_tmp);
         printf("%s\n", "Welcome!");
-       // if (argv[1][0] == '-' && argv[1][1] == 'f')
-       if(1)
+        // if (argv[1][0] == '-' && argv[1][1] == 'f')
+        if (root_tmp)
         {
-            output_stud(root_tmp);
-            while(root_tmp->last){
-                root_tmp = root_tmp->last;
+            if (1)
+            {
+                while (root_tmp->last!=NULL)
+                {
+                    root_tmp = root_tmp->last;
+                }
+                output_stud(root_tmp);
+
+                getchar();
+                printf("%s", "Goodbye!");
+                return 0;
             }
-            getchar();
-            printf("%s", "Goodbye!");
-            return 0;
+            else if (argv[1][0] == '-' && argv[1][1] == 'p')
+            {
+                // def_function(root_tmp);
+                getchar();
+                printf("%s", "Goodbye!");
+                return 0;
+            }
+            else
+            {
+                printf("%s", "Errur at command line");
+            }
         }
-        else if (argv[1][0] == '-' && argv[1][1] == 'p')
-        {
-           // def_function(root_tmp);
-            getchar();
-            printf("%s", "Goodbye!");
-            return 0;
-        }
-        else
-        {
-            printf("%s", "Errur at command line");
+        else{
+            printf("%s", "Dtabase is empty menu");
         }
     }
     else

@@ -2,9 +2,29 @@
 #define DATA_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
+//#include <conio.h>
+#include <malloc.h>
 #define str(a) char a[20];
-#define __NAME__ "C:\\Users\\Praetor\\Labs\\Laba10\\Course_Project_6x16\\database"
+#define __NAME__ "database"
+
+#define Cret(tmp, type)                 \
+    tmp = (type *)malloc(sizeof(type)); \
+    if (!tmp)                           \
+    {                                   \
+        printf("%s\n", "Out of meme");  \
+        return tmp;                     \
+    }
+
+#define to_high(tmp)         \
+    if (tmp)                 \
+    {                        \
+        while (tmp->last)    \
+        {                    \
+            tmp = tmp->last; \
+        }                    \
+        printf("High");      \
+        writer(tmp);         \
+    }
 
 #define info_stud struct info_student
 #define FNP_stud struct FNP_stud
@@ -216,8 +236,6 @@ typedef info_school
 }
 puple;
 
-
 #define select_type info_stud
-
 
 #endif
