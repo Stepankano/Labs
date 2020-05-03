@@ -4,7 +4,7 @@
 #include "../data.h"
 #include "../writer/writer.h"
 #include "../re_builder/re_builder.h"
-
+/*
 void fill_student()
 {
   int choice = 0;
@@ -73,6 +73,7 @@ void fill_student()
     }
   }
 }
+*/
 /*
 void fill_pc()
 {
@@ -111,14 +112,14 @@ void fill_pc()
       scanf("%20s", &tmp->proc.type);
       printf("%s", "Memory - ");
       scanf("%d", &tmp->memory);
-      printf("%s", "GPU type(built_in/discrete/AGP/PCI) - ");
+      printf("%s", "GPU type(built_in(b)/discrete(d)/AGP(a)/PCI(p)) - ");
       scanf("%s", &tmp_type);
-      tmp->video.typ = (tmp_type == "built_in") ? built_in : (tmp_type == "discrete") ? discrete : (tmp_type == "AGP") ? AGP : PCI;
+      tmp->video.typ = (*tmp_type == 'b') ? built_in : (*tmp_type == 'd') ? discrete : (*tmp_type == 'a') ? AGP : PCI;
       printf("%s", "Video card memory(GB) - ");
       scanf("%3d", &tmp->video.memory);
-      printf("%s", "HDD type(SCSI/ATA) - ");
+      printf("%s", "HDD type(SCSI(s)/ATA(a)) - ");
       scanf("%s", &tmp_type);
-      tmp->hdd.typ = (tmp_type == "SCSI") ? SCSI_IDE : ATA_SATA;
+      tmp->hdd.typ = (*tmp_type == 's') ? SCSI_IDE : ATA_SATA;
       printf("%s", "Winchester memory(GB) - ");
       scanf("%d", &tmp->hdd.memory);
       printf("%s", "Number of winchester - ");
@@ -141,7 +142,9 @@ void fill_pc()
     }
   }
 }
+*/
 
+/*
 void fill_exam()
 {
   char sex, medal, essay;
@@ -208,7 +211,9 @@ void fill_exam()
     }
   }
 }
+*/
 
+/*
 void fill_passenger()
 {
   char transit;
@@ -265,7 +270,8 @@ void fill_passenger()
     }
   }
 }
-
+*/
+/*
 void fill_school()
 {
   char sex;
@@ -331,15 +337,15 @@ int main()
 {
   printf("%s\n", "Welcome!");
   select_type form;
-  _Generic((form),
+  _Generic((form),/*
            info_stud
-           : fill_student() /*,
+           : fill_student() ,
              info_exam
            : fill_exam(),
              info_passenger
-           : fill_passenger(),
+           : fill_passenger(),*/
              info_pc
-           : fill_pc(),
+           : fill_pc()/*,
              info_school
            : fill_school()*/
   );

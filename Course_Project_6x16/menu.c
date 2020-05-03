@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
                 {
                     root_tmp = root_tmp->last;   
                 }
-                output_stud(root_tmp);
+                output_pc(root_tmp);
 
                 getchar();
                 printf("%s", "Goodbye!");
