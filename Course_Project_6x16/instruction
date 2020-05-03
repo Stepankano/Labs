@@ -1,6 +1,6 @@
 
 Сначала
-gcc menu.c extract/extract.c individual_function/best_students.c output/output.c re_builder/re_builder.c -g
+gcc menu.c individual_function/best_students.c output/output.c re_builder/re_builder.c -g
 и
  gcc parse/enter.c writer/writer.c re_builder/re_builder.c -o enter.exe
 

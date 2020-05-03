@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 #include "data.h"
-#include "extract/extract.h"
 #include "individual_function/best_students.h"
 #include "output/output.h"
 #include "re_builder/re_builder.h"
