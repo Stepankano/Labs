@@ -64,15 +64,14 @@ int main(int argc, char *argv[])
                 {
                     root_tmp = root_tmp->last;   
                 }
-                output_pc(root_tmp);
-
+                output_stud(root_tmp);
                 getchar();
                 printf("%s", "Goodbye!");
                 return 0;
             }
             else if (argv[1][0] == '-' && argv[1][1] == 'p')
             {
-                // def_function(root_tmp);
+                best_students(root_tmp);
                 getchar();
                 printf("%s", "Goodbye!");
                 return 0;

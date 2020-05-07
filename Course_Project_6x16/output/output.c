@@ -31,8 +31,7 @@ void output_stud(info_stud *tmp)  //info_stud
 void output_pc(info_pc *tmp) // info_pc
 {
     EMPT(tmp);
-    printf("%20s %9s %8s %6s %8s %10s", "Family", "CPU count", "CPU type","memory" "GPU type", "GPU memory");
-    printf("%8s %10s %9s %11s %11s %20s\n", "HDD type", "HDD memory", "HDD count", "dcs control", "blt control", "OC");
+    printf("%20s %9s %8s %6s %8s %10s%8s %10s %9s %9s %9s %20s\n", "Family", "CPU count", "CPU type","memory" "GPU type", "GPU memory", "HDD type", "HDD memory", "HDD count", "dcs ctrl", "blt ctrl", "OC");
     for (;;)
     {
         printf("%20s %9d %8s %6d %8s %10d", tmp->last_name, tmp->proc.count, tmp->proc.type, tmp->memory, (tmp->video.typ == built_in)?"built_in":(tmp->video.typ == discrete)?"discrete":(tmp->video.typ == AGP)?"AGP":"PCI",tmp->video.memory);

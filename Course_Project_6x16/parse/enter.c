@@ -4,7 +4,7 @@
 #include "../data.h"
 #include "../writer/writer.h"
 #include "../re_builder/re_builder.h"
-/*
+
 void fill_student()
 {
   int choice = 0;
@@ -73,7 +73,7 @@ void fill_student()
     }
   }
 }
-*/
+
 /*
 void fill_pc()
 {
@@ -337,15 +337,15 @@ int main()
 {
   printf("%s\n", "Welcome!");
   select_type form;
-  _Generic((form),/*
+  _Generic((form),
            info_stud
-           : fill_student() ,
+           : fill_student()/* ,
              info_exam
            : fill_exam(),
              info_passenger
-           : fill_passenger(),*/
+           : fill_passenger(),
              info_pc
-           : fill_pc()/*,
+           : fill_pc(),
              info_school
            : fill_school()*/
   );

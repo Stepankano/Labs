@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "builder.h": "c"
+        "builder.h": "c",
+        "sdl.h": "c"
     }
 }
