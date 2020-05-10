@@ -54,7 +54,6 @@ int main(int argc, char *argv[])
 
         select_type *root_tmp = NULL;
         root_tmp = new;
-        //root_tmp = extract(root_tmp);
         printf("%s\n", "Welcome!");
         if (root_tmp)
         {
