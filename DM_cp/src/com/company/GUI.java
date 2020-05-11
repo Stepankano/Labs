@@ -84,8 +84,10 @@ public class GUI extends JFrame {
     class ButtonEventListener implements ActionListener {
         int ang1 = -1, ang2 = -1, ang3 = -1, ang4 = -1, ang5 = -1, ang6 = -1;
         int mult1 = -1, mult2 = -1, mult3 = -1, mult4 = -1, mult5 = -1, mult6 = -1;
-        int[][] secmat = new int[100][2];
+        int sec_count = 1000;
+        int[][] secmat = new int[sec_count][2];
         JFrame frame = new JFrame("Граф");
+
 
         public void actionPerformed(ActionEvent e) {
 
@@ -115,7 +117,7 @@ public class GUI extends JFrame {
 
             int kx = 300, ky = 300;
 
-            for (int i = 1; i < 100; i++) {
+            for (int i = 1; i < sec_count; i++) {
                 for (int k = 0; k < 2; k++) {
                     secmat[i][k] = -10000;
                 }
@@ -229,7 +231,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang1 - tml1 % ang1) * angle)));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang1 - tml1 % ang1) * angle)));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -250,7 +252,7 @@ public class GUI extends JFrame {
             int tmp6 = tml6;
 
 
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 15 && Math.abs(secmat[j][1] - ky) < 15) {
                     break;
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
@@ -281,7 +283,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang2 - tml2 % ang2) * angle +10)));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang2 - tml2 % ang2) * angle+10)));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -300,7 +302,7 @@ public class GUI extends JFrame {
             int tmp4 = tml4;
             int tmp5 = tml5;
             int tmp6 = tml6;
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 15 && Math.abs(secmat[j][1] - ky) < 15) {
                     break;
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
@@ -330,7 +332,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang3 - mult3 % ang3) * angle+7)));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang3 - mult3 % ang3) * angle+7)));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -348,7 +350,7 @@ public class GUI extends JFrame {
             int tmp4 = tml4;
             int tmp5 = tml5;
             int tmp6 = tml6;
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 15 && Math.abs(secmat[j][1] - ky) < 15) {
 
                     break;
@@ -379,7 +381,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang4 - mult4 % ang4) * angle)+2));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang4 - mult4 % ang4) * angle)+2));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -397,7 +399,7 @@ public class GUI extends JFrame {
             int tmp4 = tml4;
             int tmp5 = tml5;
             int tmp6 = tml6;
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 5 && Math.abs(secmat[j][1] - ky) < 5) {
 
                     break;
@@ -427,7 +429,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang5 - mult5 % ang5) * angle)+8));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang5 - mult5 % ang5) * angle)+8));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -445,7 +447,7 @@ public class GUI extends JFrame {
             int tmp4 = tml4;
             int tmp5 = tml5;
             int tmp6 = tml6;
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 5 && Math.abs(secmat[j][1] - ky) < 5) {
 
                     break;
@@ -476,7 +478,7 @@ public class GUI extends JFrame {
             draw.x2 = (int) (kx + (100 * Math.sin((ang6 - mult6 % ang6) * angle)));
             draw.y1 = ky;
             draw.y2 = (int) (ky - (100 * Math.cos((ang6 - mult6 % ang6) * angle)));
-            for (int d = 0; d < 100; d++) {
+            for (int d = 0; d < sec_count; d++) {
                 if (Math.abs(secmat[d][0] - draw.x2) < 15 && Math.abs(secmat[d][1] - draw.y2) < 15) {
                     draw.x2 = secmat[d][0];
                     draw.y2 = secmat[d][1];
@@ -494,9 +496,8 @@ public class GUI extends JFrame {
             int tmp4 = tml4;
             int tmp5 = tml5;
             int tmp6 = tml6;
-            for (int j = 0; j < 100; j++) {
+            for (int j = 0; j < sec_count; j++) {
                 if (Math.abs(secmat[j][0] - kx) < 5 && Math.abs(secmat[j][1] - ky) < 5) {
-
                     break;
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
