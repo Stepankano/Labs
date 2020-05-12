@@ -84,8 +84,10 @@ public class GUI extends JFrame {
     class ButtonEventListener implements ActionListener {
         int ang1 = -1, ang2 = -1, ang3 = -1, ang4 = -1, ang5 = -1, ang6 = -1;
         int mult1 = -1, mult2 = -1, mult3 = -1, mult4 = -1, mult5 = -1, mult6 = -1;
-        int sec_count = 1000;
+        int sec_count = 10000;
+        int kx = 300, ky = 300;
         int[][] secmat = new int[sec_count][2];
+        int secmat_count=0;
         JFrame frame = new JFrame("Граф");
 
 
@@ -115,15 +117,15 @@ public class GUI extends JFrame {
             matr[2][5] = defining_right_6.getText()+" ";
 
 
-            int kx = 300, ky = 300;
+
 
             for (int i = 1; i < sec_count; i++) {
                 for (int k = 0; k < 2; k++) {
                     secmat[i][k] = -10000;
                 }
             }
-            secmat[0][0] = 100;
-            secmat[0][1] = 300;
+            secmat[0][0] = kx;
+            secmat[0][1] = ky;
 
             char[] matr_form = new char[6];
 
@@ -214,7 +216,7 @@ public class GUI extends JFrame {
 
                 mult6(mult1, mult2, mult3, mult4, mult5, mult6, kx, ky);
             }
-
+JOptionPane.showMessageDialog(null, "Итого элементов: "+(secmat_count+1),"Итог",JOptionPane.PLAIN_MESSAGE);
 
         }
 
@@ -258,6 +260,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
 
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
@@ -308,6 +311,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult3 != -1) mult3(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
@@ -357,6 +361,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult3 != -1) mult3(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
@@ -406,6 +411,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult3 != -1) mult3(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
@@ -454,6 +460,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult3 != -1) mult3(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
@@ -502,6 +509,7 @@ public class GUI extends JFrame {
                 } else if ((secmat)[j][0] == -10000 && (secmat)[j][1] == -10000) {
                     (secmat)[j][0] = kx;
                     (secmat)[j][1] = ky;
+                    secmat_count +=1;
                     if (mult1 != -1) mult1(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult2 != -1) mult2(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);
                     if (mult3 != -1) mult3(tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, kx, ky);

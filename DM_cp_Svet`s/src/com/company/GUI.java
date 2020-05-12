@@ -52,51 +52,67 @@ public class GUI extends JFrame {
             for (int i = 0; i < size; i++) {
                 vertex[i] = 0;
                 for (int k = 0; k < size; k++) {
-                    vertex[i]+=(matrix[i][k]==true?1:0);
-                    edge+=(matrix[i][k]==true?1:0);
+                    vertex[i] += (matrix[i][k] == true ? 1 : 0);
+                    edge += (matrix[i][k] == true ? 1 : 0);
                 }
             }
-            int max =0, num=0;
-            for(int i = 0;i<size-1;i++){
-                max = (vertex[i]>vertex[i+1]?vertex[i]:vertex[i+1]);
-            }
 
-            for(int i = 0;i<size;i++){
-                if(vertex[i]==max){
-                    vertex[i] = 0;
-                    num = i;
-                    break;
+            for (int k = 0; k < size; k++) {
+                for (int j = 0; j < size; j++) {
+                    matrix[k][j] = (matrix[k][j] && matrix[j][k]);
                 }
             }
-            int[]stack = new int[size];
 
-            double angle = (360/size)*(Math.PI/180);// 3. Рисование) // добавить цветов)
+            int[] stack = new int[size]; //3.Создание стека вершин
+
+            for (int i = 0; i < size; i++) {
+                stack[i] = -1;
+            }
+            int stack_num = 0;
+
+            int[][] array = new int[size][2]; //0 - степень, 1 - номер
+
+            for(int i =0;i<size;i++){
+                array[i][0] = vertex[i];
+                array[i][1] =i;
+            }
+            boolean trig =true;
+            while(trig){    //Сортировка (в начале - самые большие)
+                for(int i=0;i<size-1;i++){
+                    trig =false;
+                    if(array[i][0]<array[i+1][0]){
+                        trig = true;
+                        int tmp = array[i][0];
+                        array[i][0]=array[i+1][0];
+                        array[i+1][0]=array[i][0];
+                         tmp = array[i][1];
+                        array[i][1]=array[i+1][1];
+                        array[i+1][1]=array[i][1];
+                    }
+                }
+            }
+
+            double angle = (360 / size) * (Math.PI / 180);// 4. Рисование) // добавить цветов)
             Color col = Color.BLUE;
-            for(int i = 1;i<=size;i++){
+            for (int i = 0; i < size; i++) {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 Circ dot = new Circ();
-               //dot.color = col;
+                //dot.color = col;
                 //col = dot.next_col(col);
 
                 dot.setBackground(Color.WHITE);
-                dot.x = (int) (Ox + (200 * Math.sin(i * angle)));
-                dot.y = (int) (Oy - (200 * Math.cos(i * angle)));
+                dot.x = (int) (Ox + (200 * Math.sin(array[i][1] * angle)));
+                dot.y = (int) (Oy - (200 * Math.cos(array[i][1] * angle)));
                 dot.wid = 15;
                 dot.hei = 15;
+                if(stack_num!=0) {
+                    
+                }
+
                 frame.add(dot);
                 frame.setSize(700, 700);
                 frame.setVisible(true);
 
-                for(int  k= 0;k<size-1;k++){
-                    max = (vertex[k]>vertex[k+1]?vertex[k]:vertex[k+1]);
-                }
-                for(int k = 0;k<size;k++){
-                    if(vertex[k]==max){
-                        vertex[k] = 0;
-                        num = k;
-                        break;
-                    }
-                }
 
 
             }
