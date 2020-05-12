@@ -70,7 +70,7 @@ public class GUI extends JFrame {
             }
             int stack_num = 0;
 
-            int[][] array = new int[size][2]; //0 - степень, 1 - номер
+            int[][] array = new int[size][3]; //0 - степень, 1 - номер, 2 - цвет
 
             for(int i =0;i<size;i++){
                 array[i][0] = vertex[i];
