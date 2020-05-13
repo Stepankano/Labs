@@ -18,7 +18,7 @@ int menu(void)
 int main()
 {
     row *table = NULL;
-    int size_table = 0;
+    int size = 0;
 
     printf("%s\n", "Welcome!");
     int k = 0;
@@ -30,20 +30,57 @@ int main()
         {
         case 1:
         {
+            size += 1;
+            table = (row *)realloc(table, size * sizeof(row));
+            if (!table)
+            {
+                size -= 1;
+                printf("Out of memory\n");
+                break;
+            }
+            printf("Enter a string: ");
             getchar();
-            size_table = create(table, size_table);
+            scanf("%[^\n]s", &(table[size - 1].string));
+            printf("Enter a key: ");
+            getchar();
+            scanf("%f", &(table[size - 1].key));
+            printf("\n");
         }
         break;
         case 2:
         {
-            getchar();
-            sorting(table, size_table);
+            for (int i = 0; i < size; i++)
+            {
+                printf("%7f  %s\n", table[i].key, table[i].string);
+            }
+            printf("\n");
+
+            for (int i = 1; i < size; i++)
+            {
+                int k = i;
+                while (k > 0 && table[k].key < table[k - 1].key)
+                {
+                    row f = table[k];
+                    table[k] = table[k - 1];
+                    table[k - 1] = f;
+                    k -= 1;
+                }
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                printf("%7f  %s\n", table[i].key, table[i].string);
+            }
+            printf("\n");
         }
         break;
         case 3:
         {
             getchar();
-            search(table, 0, size_table - 1);
+            printf("Enter a key: ");
+            float key;
+            scanf("%f", &key);
+            search(table, 0, size - 1, key);
         }
         break;
         case 4:

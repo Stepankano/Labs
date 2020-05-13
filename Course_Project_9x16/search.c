@@ -1,25 +1,42 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "data.h"
+#define average tmp[(low + high) / 2].key
 
-void search(row *tmp, int low, int high)
+void search(row *tmp, int low, int high, float key)
 {
-    printf("Enter a key: ");
-    char key;
-    scanf("%c", &key);
-    if (tmp[(low + high) / 2].key > key)
+    if (average > key && ((average)-key) * ((average)-key) > eps)
     {
-        search(tmp, low, (low + high) / 2);
+        if ((low + high) / 2 != low)
+        {
+            search(tmp, low, (low + high) / 2, key);
+        }
+        else
+        {
+            printf("Error\n");
+        }
         return;
     }
-    else if (tmp[(low + high) / 2].key < key)
+    else if (average < key && ((average)-key) * ((average)-key) > eps)
     {
-        search(tmp, (low + high) / 2, high);
+        if ((low + high) / 2 != high)
+        {
+            search(tmp, (low + high) / 2, high, key);
+        }
+        else
+        {
+            printf("Error\n");
+        }
         return;
+    }
+    else if (((average)-key) * ((average)-key) < eps)
+    {
+        printf("%s %f %s %s\n", "Key: ", average, "\nString: ", tmp[(low + high) / 2].string);
     }
     else
     {
-        printf("%s %f %s %s", "Key: ", tmp[(low + high) / 2].key, "\nString: ", tmp[(low + high) / 2].string);
+        printf("Error\n");
     }
+
     return;
 }

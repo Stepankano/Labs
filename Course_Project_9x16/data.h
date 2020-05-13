@@ -1,5 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
+#define eps 0.00001
 
 typedef struct
 {
@@ -7,8 +8,8 @@ typedef struct
     char string[100];
 } row;
 
-int create(row *, int);
-void search(row *, int, int);
-void sorting(row *, int);
+
+void search(row *, int, int,float);
+
 
 #endif

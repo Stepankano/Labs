@@ -10,7 +10,7 @@ int create(row *tmp, int size)
     {
         size -= 1;
         printf("Out of memory\n");
-        return size;
+        
     }
     printf("Enter a string: ");
     getchar();
