@@ -1,6 +1,10 @@
 #ifndef DATA_H
 #define DATA_H
+#include <stdio.h>
 
-void empty_function(void); //some junk for makefile
+int* push(int*,int*);
+int* pop(int*,int*);
+void output(int*,int);
+void sort(int*,int);
 
 #endif

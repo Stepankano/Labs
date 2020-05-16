@@ -3,13 +3,18 @@ CC = gcc
 LD = gcc
 CCFLAGS = -g -Wall -pedantic -std=c99
 LDFLAGS = 
-OBJ = menu.o empty.o
+OBJ = menu.o output.c push_pop.c sort.c
 .SUFFIXES: .c .o 
 menu: $(OBJ)
 	$(LD) $(LDFLAGS) -o menu $(OBJ)
-menu.o: menu.c empty.o
+menu.o: menu.c 
+output.o: output.c 
+push_pop.o: push_pop.c 
+sort.o: sort.c 
 .c.o :
 	$(CC) $(CCFLAGS) -c $< -o $@
-empty.c: data.h
+output.c: data.h
+push_pop.c: data.h
+sort.c: data.h
 clean:
 	rm -f *.o prog

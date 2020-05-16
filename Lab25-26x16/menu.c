@@ -1,6 +1,15 @@
+/*
+ *  Программа создаёт динамический массив и отображает на него очередь.
+ *  Лоступные операции: 
+ *  1. Push - добавление элемента в очередь
+ *  2. Pop - удаление элемента из очереди
+ *  3. Sort - сортировка очереди
+ *  4. Output - вывод очереди
+ */   
+
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
 
 #include "data.h"
 
@@ -19,7 +28,7 @@ int menu(void)
 int main()
 {
     int *queue = NULL;
-    int *tmp_queue = NULL;
+    int **tmp_queue =NULL;
     int size_of_queue = 0;
     printf("%s\n", "Welcome!");
     int k = 0;
@@ -31,72 +40,26 @@ int main()
         {
         case 1: //push
         {
-            int value;
             getchar();
-            printf("%s ", "Enter a num:");
-            scanf("%d", &value);
-            size_of_queue += 1;
-            tmp_queue = (int *)realloc(queue, size_of_queue * (sizeof(int)));
-            if (!tmp_queue)
-            {
-                printf("%s\n", "Out of memory");
-                size_of_queue -= 1;
-            }
-            else
-            {
-                queue = tmp_queue;
-                queue[size_of_queue - 1] = value;
-            }
-            printf("%s", "\n");
+            queue = push(queue,&size_of_queue);
         }
         break;
-        case 2:
+        case 2: //pop
         {
             getchar();
-            if (size_of_queue == 0)
-            {
-                printf("%s\n", "Queue is empty");
-            }
-            else if (size_of_queue == 1)
-            {
-                free(tmp_queue);
-                free(queue);
-            }
-            else
-            {
-                for (int i = 0; i < size_of_queue-1; i++)
-                {
-                    queue[i]=queue[i+1];
-                }
-                size_of_queue -= 1;
-                tmp_queue = (int *)realloc(queue, size_of_queue * (sizeof(int)));
-                queue = tmp_queue;
-            }
-            printf("%s", "\n");
+            queue = pop(queue,&size_of_queue);   
         }
         break;
         case 3:
         {
-            for (int i = 0; i < size_of_queue; i++)
-            {
-                printf("%d ", queue[i]);
-            }
-            printf("%s", "\n");
+            getchar();
+            output(queue,size_of_queue);
         }
         break;
         case 4:
         {
-            int tmp = 0;
-            for (int i = 1; i < size_of_queue; i++)
-            {
-                if (queue[i] < queue[i - 1])
-                {
-                    tmp = queue[i];
-                    queue[i] = queue[i - 1];
-                    queue[i - 1] = tmp;
-                    i = 0;
-                }
-            }
+            getchar();
+            sort(queue,size_of_queue);
         }
         break;
         default:
