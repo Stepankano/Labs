@@ -5,8 +5,7 @@
  *  2. Pop - удаление элемента из очереди
  *  3. Sort - сортировка очереди
  *  4. Output - вывод очереди
- */   
-
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +27,6 @@ int menu(void)
 int main()
 {
     int *queue = NULL;
-    int **tmp_queue =NULL;
     int size_of_queue = 0;
     printf("%s\n", "Welcome!");
     int k = 0;
@@ -41,25 +39,28 @@ int main()
         case 1: //push
         {
             getchar();
-            queue = push(queue,&size_of_queue);
+            int value;
+            printf("%s ", "Enter a num:");
+            scanf("%d", &value);
+            queue = push(queue, &size_of_queue, value);
         }
         break;
         case 2: //pop
         {
             getchar();
-            queue = pop(queue,&size_of_queue);   
+            queue = pop(queue, &size_of_queue);
         }
         break;
         case 3:
         {
             getchar();
-            output(queue,size_of_queue);
+            output(queue, size_of_queue);
         }
         break;
         case 4:
         {
             getchar();
-            sort(queue,size_of_queue);
+            queue = sort(queue, size_of_queue);
         }
         break;
         default:

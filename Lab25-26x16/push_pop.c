@@ -6,11 +6,8 @@
 #include "data.h"
 #include <malloc.h>
 
-int* push(int *queue, int * size_of_queue)
+int* push(int *queue, int * size_of_queue,int value)
 {
-    int value;
-    printf("%s ", "Enter a num:");
-    scanf("%d", &value);
     *size_of_queue += 1;
     int* tmp_queue = NULL;
     
@@ -39,6 +36,7 @@ int* pop(int *queue, int *size_of_queue)
     {
         free(queue);
        * size_of_queue = 0;
+        return NULL;
     }
     else
     {
