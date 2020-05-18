@@ -155,36 +155,36 @@ public class GUI extends JFrame {
                 }
             }
 
-            if (matr_form[0] != ' ' && matr_form_num[0] != -1) {
+            if (matr_form[0] != ' ' && matr_form_num[0] != -1 &&  matr_form_num[0] != 1 &&  matr_form_num[0] !=0) {
 
                 mult1 = matr_form_num[0];
                 ang1 = mult1;
                 mult1 *= 100;
             }
-            if (matr_form[1] != ' ' && matr_form_num[1] != -1) {
+            if (matr_form[1] != ' ' && matr_form_num[1] != -1 &&  matr_form_num[1] != 1 &&  matr_form_num[1] !=0) {
 
                 mult2 = matr_form_num[1];
                 ang2 = mult2;
                 mult2 *= 100;
             }
-            if (matr_form[2] != ' ' && matr_form_num[2] != -1) {
+            if (matr_form[2] != ' ' && matr_form_num[2] != -1&&  matr_form_num[2] != 1 &&  matr_form_num[2] !=0) {
 
                 mult3 = matr_form_num[2];
                 ang3 = mult3;
                 mult3 *= 100;
             }
-            if (matr_form[3] != ' ' && matr_form_num[3] != -1) {
+            if (matr_form[3] != ' ' && matr_form_num[3] != -1&&  matr_form_num[3] != 1 &&  matr_form_num[3] !=0) {
 
                 mult4 = matr_form_num[3];
                 ang4 = mult4;
                 mult4 *= 100;
             }
-            if (matr_form[4] != ' ' && matr_form_num[4] != -1) {
+            if (matr_form[4] != ' ' && matr_form_num[4] != -1 &&  matr_form_num[4] != 1 &&  matr_form_num[4] !=0) {
                                 mult5 = matr_form_num[4];
                 ang5 = mult5;
                 mult5 *= 100;
             }
-            if (matr_form[5] != ' ' && matr_form_num[5] != -1) {
+            if (matr_form[5] != ' ' && matr_form_num[5] != -1 &&  matr_form_num[5] != 1 &&  matr_form_num[5] !=0) {
 
                 mult6 = matr_form_num[5];
                 ang6 = mult6;
@@ -348,6 +348,7 @@ JOptionPane.showMessageDialog(null, "Итого элементов: "+(secmat_co
             kx = draw.x2;
             ky = draw.y2;
             mult3 -= 1;
+            tml3 -= 1;
             int tmp1 = tml1;
             int tmp2 = tml2;
             int tmp3 = tml3;
@@ -398,6 +399,7 @@ JOptionPane.showMessageDialog(null, "Итого элементов: "+(secmat_co
             kx = draw.x2;
             ky = draw.y2;
             mult4 -= 1;
+            tml4 -= 1;
             int tmp1 = tml1;
             int tmp2 = tml2;
             int tmp3 = tml3;
@@ -447,6 +449,7 @@ JOptionPane.showMessageDialog(null, "Итого элементов: "+(secmat_co
             kx = draw.x2;
             ky = draw.y2;
             mult5 -= 1;
+            tml5 -= 1;
             int tmp1 = tml1;
             int tmp2 = tml2;
             int tmp3 = tml3;
@@ -497,6 +500,7 @@ JOptionPane.showMessageDialog(null, "Итого элементов: "+(secmat_co
             kx = draw.x2;
             ky = draw.y2;
             mult6 -= 1;
+            tml6 -= 1;
             int tmp1 = tml1;
             int tmp2 = tml2;
             int tmp3 = tml3;
