@@ -1,3 +1,7 @@
+/*
+ *  Вывод списка и матрицы
+ */
+
 #include <stdio.h>
 #include "data.h"
 
@@ -14,7 +18,9 @@ void output(struct cell *tmp)
         if (tmp->next)
         {
             tmp = tmp->next;
-        }else{
+        }
+        else
+        {
             break;
         }
     }
@@ -22,6 +28,6 @@ void output(struct cell *tmp)
     {
         tmp = tmp->last;
     }
-    
-
+    float *matrix = conversion(tmp);
+    return;
 }

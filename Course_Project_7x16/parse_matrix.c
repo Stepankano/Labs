@@ -1,3 +1,7 @@
+/*
+ * Запись списка (для окончания ввести вместо индекса -1)
+ */
+
 #include <stdio.h>
 #include "data.h"
 
@@ -40,5 +44,6 @@ struct cell *enter(struct cell *tmp)
     {
         tmp = tmp->last;
     }
+    //float* matrix = conversion(tmp);
     return tmp;
 }

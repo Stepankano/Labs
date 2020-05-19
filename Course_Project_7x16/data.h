@@ -1,6 +1,7 @@
 #ifndef DATA_H
 #define DATA_H
 #include <malloc.h>
+#define eps 0.00001
 
 #define Cret(tmp)                       \
     tmp = (cell *)malloc(sizeof(cell)); \
@@ -17,9 +18,10 @@ typedef struct cell
     float value;
 } cell;
 
-
-struct cell *enter(struct cell *);
-void output(struct cell *);
-void function(struct cell *);
+cell *enter(cell *);
+void output(cell *);
+void function_Zayki(cell *);
+void function_Koti(cell *);
+float *conversion(cell *);
 
 #endif

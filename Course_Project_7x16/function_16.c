@@ -1,88 +1,189 @@
+/*
+ *  Умножение строки на матрицу и подсчет ненулевых элементов
+ */
 #include <stdio.h>
 #include "data.h"
 
-void function(struct cell *tmp)
+void function_Koti(cell *list)
 {
+    int height = 0;
+    int width = 0;
     int index;
     float value;
-    cell *tmp_sec = NULL;
-    while (1)
+    cell *tmp = NULL;
+    while (list) //определение высоты и ширины матрицы
+    {
+        if (list->index / 10 > height)
+        {
+            height = list->index / 10;
+        }
+        if (list->index % 10 > width)
+        {
+            width = list->index % 10;
+        }
+        if (list->next)
+        {
+            list = list->next;
+        }
+        else
+        {
+            break;
+        }
+    }
+    for (int i = 0; i < height; i++) //заполнение строки
     {
         printf("Enter index and value: ");
         scanf("%d", &index);
-        if (index != -1)
+        scanf("%f", &value);
+        if (!tmp)
         {
-            scanf("%f", &value);
-            if (!tmp_sec)
-            {
-                Cret(tmp_sec);
-                tmp_sec->last = NULL;
-                tmp_sec->next = NULL;
-                tmp_sec->index = index;
-                tmp_sec->value = value;
-            }
-            else
-            {
-                Cret(tmp_sec->next);
-                tmp_sec->next->last = tmp;
-                tmp_sec->next->next = NULL;
-                tmp_sec->next->index = index;
-                tmp_sec->next->value = value;
-                tmp_sec = tmp_sec->next;
-            }
+            Cret(tmp);
+            tmp->last = NULL;
+            tmp->next = NULL;
+            tmp->index = index;
+            tmp->value = value;
         }
         else
         {
-            break;
+            Cret(tmp->next);
+            tmp->next->last = tmp;
+            tmp->next->next = NULL;
+            tmp->next->index = index;
+            tmp->next->value = value;
+            tmp = tmp->next;
         }
     }
-    int width = 0;
+    while (tmp->last)
+    {
+        tmp = tmp->last;
+    }
+    int count_not_zero = 0;
+    float sum;
+    float *matrix = conversion(list);
+    for (int i = 0; i < width; i++)
+    {
+        sum = 0;
+        for (int k = 0; k < height; k++)
+        {
+            sum += (tmp->value) * matrix[i + k * width];
+            if (tmp->next)
+            {
+                tmp = tmp->next;
+            }
+        }
+        if (((sum > 0) ? sum : (-sum)) > eps)
+        { 
+            count_not_zero += 1;
+        }
+        while (tmp->last)
+        {
+            tmp = tmp->last;
+        }
+    }
+    printf("Not null elements: %d\n", count_not_zero);
+}
+
+void function_Zayki(cell *list)
+{
     int height = 0;
-    while (tmp)
+    int width = 0;
+    int index;
+    float value;
+    cell *tmp = NULL;
+    while (list) //определение высоты и ширины матрицы
     {
-        if (tmp->index / 10 > height)
+        if (list->index / 10 > height)
         {
-            height = tmp->index / 10;
+            height = list->index / 10;
         }
-        if (tmp->index % 10 > width)
+        if (list->index % 10 > width)
         {
-            width = tmp->index % 10;
+            width = list->index % 10;
         }
-        if (tmp->next)
+        if (list->next)
         {
-            tmp = tmp->next;
+            list = list->next;
         }
         else
         {
             break;
         }
     }
-    float matrix[height][width];
+    float *matrix = conversion(list);
+    float sum_str;
+    int count_not_zero;
+  //  printf("BR1\n");
     for (int i = 0; i < height; i++)
     {
+        sum_str = 0;
+        count_not_zero = 0;
+       // printf("BR1.1\n");
         for (int k = 0; k < width; k++)
         {
-            matrix[i][k] = 0;
+          //  printf("BR1.2\n");
+            sum_str += matrix[i * width + k];
+         //   printf("BR1.3\n");
+            if ((matrix[i * width + k]) > 0 ? (matrix[i * width + k]) : (-1) * (matrix[i * width + k]) > eps)
+            {
+                count_not_zero += 1;
+            }
+            printf("---%f\n",matrix[i * width + k]);
         }
+        printf("%f %d\n",sum_str,count_not_zero);
+       // printf("BR1.4\n");
+        if (!tmp)
+        {
+           // printf("BR1.4.1\n");
+            Cret(tmp);
+          //  printf("BR1\n");
+            tmp->last = NULL;
+           // printf("BR2\n");
+            tmp->next = NULL;
+           // printf("BR3\n");
+            tmp->index = count_not_zero;
+          //  printf("BR4\n");
+            tmp->value = sum_str;
+           // printf("BR1.4.1.1\n");
+        }
+        else
+        {
+           // printf("BR1.4.2\n");
+            Cret(tmp->next);
+            tmp->next->last = tmp;
+            tmp->next->next = NULL;
+            tmp->next->index = count_not_zero;
+            tmp->next->value = sum_str;
+            tmp = tmp->next;
+            //printf("BR1.4.2.1\n");
+        }
+        //printf("BR1.5\n");
     }
+   // printf("BR2\n");
+    int max_not_zero = 0;
     while (tmp)
     {
-        matrix[tmp->index / 10][tmp->index % 10] = tmp->value;
-        if (tmp->next)
+        max_not_zero = (tmp->index > max_not_zero) ? tmp->index : max_not_zero;
+        if (tmp->last)
         {
-            tmp = tmp->next;
+            tmp = tmp->last;
         }
         else
         {
             break;
         }
     }
-    for (int i = 0; i < height; i++)
+    //printf("BR3\n");
+    while (tmp)
     {
-        for (int k = 0; k < width; k++)
+        if (tmp->index == max_not_zero)
         {
-           printf("%5.5f ",matrix[i][k]); 
+            printf("Max not zero: %d, sum: %5.5f\n", tmp->index, tmp->value);
         }
-        printf("\n");
+        if(tmp->next){
+            tmp=tmp->next;
+        }else{
+            break;
+        }
     }
+    return;
 }
