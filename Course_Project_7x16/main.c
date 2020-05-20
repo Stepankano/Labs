@@ -48,7 +48,7 @@ int main()
         case 3: //Function
         {
             getchar();
-            function_Zayki(matrix);
+            function(matrix);
         }
         break;
         default:

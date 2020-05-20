@@ -20,8 +20,7 @@ typedef struct cell
 
 cell *enter(cell *);
 void output(cell *);
-void function_Zayki(cell *);
-void function_Koti(cell *);
+void function(cell *);
 float *conversion(cell *);
 
 #endif
