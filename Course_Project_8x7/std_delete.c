@@ -19,17 +19,29 @@ struct cell *std_delete(struct cell *tmp, type_name old_val)
     {
         if (tmp->value == old_val)
         {
-            if (tmp->next != tmp->prev)
+            if (tmp->next && (tmp->next != tmp->prev))
             {
                 tmp->next->prev = tmp->prev;
                 tmp->prev->next = tmp->next;
             }
+            if (tmp->next && (tmp->next == tmp->prev))
+            {
+                tmp->next->next = NULL;
+                tmp->next->prev = NULL;
+            }
             struct cell *copy = tmp->next;
             free(tmp);
-            return std_delete(copy,old_val);
+            if (copy)
+            {
+                return std_delete(copy, old_val);
+            }
+            else
+            {
+                return NULL;
+            }
         }
         struct cell *runner = tmp;
-        while (runner->next && runner->next!= tmp)
+        while (runner->next && runner->next != tmp)
         {
             if (runner->next->value != old_val)
             {
@@ -40,7 +52,7 @@ struct cell *std_delete(struct cell *tmp, type_name old_val)
 
                 struct cell *copy = runner->next;
                 runner->next = copy->next;
-                copy->next->prev=runner;
+                copy->next->prev = runner;
                 free(copy);
             }
         }
