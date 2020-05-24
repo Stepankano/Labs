@@ -1,0 +1,80 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[russian]{babel}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{132}
+\fancyhead[C]{Глава 9}
+
+\begin{document}
+
+%\maketitle
+
+\textbf{Теорема 160.}  
+\textit{Пусть f(a) непрерывна в} [\textit{a,b}]\textit{ и пусть} \[f`(x)\ge0 \textit{ при } a<x<b.\]
+\textit{Тогда}
+\[f(b)\ge f(a). \]
+\par \text{Д\thispace\thinspaceо\thispace\thinspaceк\thispace\thinspaceа\thispace\thinspaceз\thispace\thinspaceа\thispace\thinspaceт\thispace\thinspaceе\thispace\thinspaceл\thispace\thinspaceь\thispace\thinspaceс\thispace\thinspaceт\thispace\thinspaceв\thispace\thinspaceо.}
+Применяя теорему 159, имеем \[f`(\xi)\ge0;\]поэтому\[\frac{f(b)-f(a)}{b-a}\ge0,\]
+\[f(b)\ge f(a).\]
+\par \textbf{Пример.} \textit{f}(\textit{x})\textit{=e^x-x, a=0, b>0.}
+\par \textnormal{Так как} \[f`(x)=e^x-1\ge 0 \textit{ для }x\ge 0, \] \textnormal{то получаем, что }
+\[e^b-b\ge 1 \textit{ для }b>0 \] \textnormal{(это уже известно нам и из теоремы 37 с x=e^b).}
+\par \textbf{Теорема 161.} \textit{Пусть f}(\textit{x})\textit{и g}(\textit{x})\textit{ непрерывны в }[\textit{a,b}]\textit{и пусть}
+\[f`(x)\ge g`(x) \textit{ при } a<x<b.\] \textit{Тогда}\[f(b)-f(a)\ge g(b)-g(a).\]
+\par \text{Д\thispace\thinspaceо\thispace\thinspaceк\thispace\thinspaceа\thispace\thinspaceз\thispace\thinspaceа\thispace\thinspaceт\thispace\thinspaceе\thispace\thinspaceл\thispace\thinspaceь\thispace\thinspaceс\thispace\thinspaceт\thispace\thinspaceв\thispace\thinspaceо.}
+Теорема 160 с заменой \textit{f}(\textit{x}) на \textit{f}(\textit{x})\textit{-g}(\textit{x}) дает
+\[f(b)-g(b)\ge f(a)-g(a).\]
+\par \textbf{Теорема 162.} \textit{Пусть f}(\textit{x})\textit{и g}(\textit{x})\textit{ непрерывны в }[\textit{a,b}]\textit{и пусть}
+\[f`(x)=g`(x) \textit{ при } a<x<b.\] \textit{Тогда}
+\[f(x)=g(x)+(f(a)-g(a))\textit{ при }a\le x\le b\]
+\textnormal{(и, значит, \textit{f}(\textit{x})\textit{-g}(\textit{x}) постоянно в [\textit{a,b}]).}
+
+\newpage
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfood{}
+\fancyhead[R]{133}
+\fancyhead[C]{\textit{Теорема Ролля о среднем значении}}
+\par \text{Д\thispace\thinspaceо\thispace\thinspaceк\thispace\thinspaceа\thispace\thinspaceз\thispace\thinspaceа\thispace\thinspaceт\thispace\thinspaceе\thispace\thinspaceл\thispace\thinspaceь\thispace\thinspaceс\thispace\thinspaceт\thispace\thinspaceв\thispace\thinspaceо.}
+\textnormal{ Пусть }\textit{a\le \xi \le b.}
+\textnormal{ При $\xi$ = a имеем}
+\par
+\[f(\xi)=g(\xi)+(f(a)-g(a)).\]
+\textnormal{При }\textit{a\le\xi\le b}\textnormal{ теорема 161 в применении к [a,$\xi$] дает}
+\par
+\[f(\xi)-f(a)\ge g(\xi)-g(a),\]
+\textnormal{и, так как }\textit{f}(\textit{x}) и \textit{g}(\textit{x}) \textnormal{ симметрично входят в наши предпо-}\\
+\textnormal{ложения, --- также}
+\[g(\xi)-g(a)\ge f(\xi)-f(a).\]
+\textnormal{Поэтому}
+\[f(\xi)-f(a)=g(\xi)-g(a),\]
+\[f(\xi)=g(\xi)+(f(a)-g(a)).\]
+\par
+\textnormal{\textbf{Теорема 163.}}
+\textit{Пусть f}(\textit{x})\textit{ непрерывна в }\textnormal{[}\textit{a,b}\textnormal{]}\textit{ и пусть}
+\[f`(x)=0 \textit{ при } a<x<b.\]
+\textnormal{Тогда}
+\[f(x)=f(a) \textit{ при } a\le x\le b\]
+\textnormal{(т. е. }\textit{f(x) - }\textnormal{постоянная в [a,b])}
+\par \text{Д\thispace\thinspaceо\thispace\thinspaceк\thispace\thinspaceа\thispace\thinspaceз\thispace\thinspaceа\thispace\thinspaceт\thispace\thinspaceе\thispace\thinspaceл\thispace\thinspaceь\thispace\thinspaceс\thispace\thinspaceт\thispace\thinspaceв\thispace\thinspaceо:}
+\textnormal{ теорема 162 с}
+\[g(x)=0.\]
+\par \textnormal{\textbf{Теорема 164.}}
+\textit{Пусть a<b,  f`(x)  существует  при}\\
+\textit{a\le x\le b}\textnormal{  и}
+\par
+\[f`(a)<c<f`(b)\] 
+\textit{Тогда существует \xi}\textit{ такое, что}
+\par
+\[a<\xi<b, f`(\xi)=c.\]
+\par \text{Д\thispace\thinspaceо\thispace\thinspaceк\thispace\thinspaceа\thispace\thinspaceз\thispace\thinspaceа\thispace\thinspaceт\thispace\thinspaceе\thispace\thinspaceл\thispace\thinspaceь\thispace\thinspaceс\thispace\thinspaceт\thispace\thinspaceв\thispace\thinspaceо.}
+\textnormal{Без ограничения общности можно}\\
+\textnormal{считать, что с=0 (иначе мы рассмотрели бы} \textit{f(x)-cx}\textnormal{) и}\\
+\textnormal{что}
+\[f`(a)>0>f`(b)\]
+\textnormal{(иначе мы рассмотрели бы - }\textit{f}\textnormal{(}\textit{x}\textnormal{)).}
+\end{document}

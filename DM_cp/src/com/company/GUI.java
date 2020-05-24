@@ -41,12 +41,16 @@ public class GUI extends JFrame {
     private JLabel forming_label_tip = new JLabel("(по одной образующей)");
     private JLabel forming_defining_left = new JLabel("Определяющие");
     private JLabel forming_defining_right = new JLabel("cоотношения");
-    private JLabel forming_defining_left_tip = new JLabel("(a^2*b = e)        a2b ");
-    private JLabel forming_defining_right_tip = new JLabel("                                   e");
+    private JLabel forming_defining_left_tip = new JLabel("(левосторонние значения определяющих (a2 это a^2))");
+    private JLabel forming_defining_right_tip = new JLabel("(правосторонние значения определяющих)");
+    private JLabel forming_defining_right_tip2 = new JLabel("(рекомендуется вводить по убыванию степени)");
+
 
     public GUI() {
         super("Задание графа по образующим и определяющим соотношениям");
-        this.setBounds(100, 100, 600, 300);
+
+        JOptionPane.showMessageDialog(null, "Программа строит граф по образующим (чтобы избежать нагромождений ограничено 6-ю), которые указываются в первом столбце по одной в поле,\nи определяющим соотношениям вида s^r = e (s - образующая, r - целая степень), при этом левостороннее значение (a^2 записывается как a2) записывается во втором столбце\nа правостороннее (это e) - в третьем( для удобства степень ограничена 9-ю). \nРекомендуется указывать степени в порядке невозрастания и не более двух образующих (при 3 и более граф бесконечен и подсчет элементов неправильный) ","Инструкция",JOptionPane.PLAIN_MESSAGE);
+        this.setBounds(100, 100, 1000, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = this.getContentPane();
@@ -76,7 +80,7 @@ public class GUI extends JFrame {
         container.add(defining_left_6);
         container.add(defining_right_6);
         container.add(empt);
-        container.add(empt);
+        container.add(forming_defining_right_tip2);
         button.addActionListener(new ButtonEventListener());
         container.add(button);
     }
