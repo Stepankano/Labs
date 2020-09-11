@@ -8,11 +8,12 @@ void text_out(cell *tmp)
         printf("%d", tmp->val.value);
     else
         printf("%c", tmp->val.oper);
+        
     if (tmp->left)
     {
         text_out(tmp->left);
     }
-    
+
     if (tmp->right)
     {
         text_out(tmp->right);

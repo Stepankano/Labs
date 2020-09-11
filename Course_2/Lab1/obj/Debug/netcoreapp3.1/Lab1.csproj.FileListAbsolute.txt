@@ -1,0 +1,13 @@
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.exe
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.deps.json
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.json
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.runtimeconfig.dev.json
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.dll
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\bin\Debug\netcoreapp3.1\Lab1.pdb
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.csprojAssemblyReference.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfoInputs.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.AssemblyInfo.cs
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.csproj.CoreCompileInputs.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.dll
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.pdb
+C:\Users\Praetor\Labs\Laba10\Course_2\Lab1\obj\Debug\netcoreapp3.1\Lab1.genruntimeconfig.cache
