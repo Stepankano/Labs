@@ -1,0 +1,12 @@
+# !\usr\bin\bash
+
+if [ $# = 1 ]
+then
+    NAME="Lab$1";
+	mkdir $NAME && cd $NAME && dotnet new console;
+    echo "New Lab was successfully begin!";
+	exit 0;
+fi;
+
+echo "Bad key, try again";
+exit 0;
