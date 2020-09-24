@@ -8,7 +8,6 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-
             Graph_A A = new Graph_A(new int[7] { 1, 2, 3, 4, 5, 6, 7 });
             System.Console.WriteLine($"1 A");
             A.MoveTo('K');
@@ -18,7 +17,6 @@ namespace Lab2
             A.MoveTo('E');
             A.MoveTo('F');
         }
-
     }
 
     class Graph_A
@@ -108,11 +106,7 @@ namespace Lab2
         class Graph_K
         {
             private int Value;
-            public int MoveTo()
-            {
-
-                return Value;
-            }
+            
             public Graph_K(int[] value)
             {
                 Value = value[1];

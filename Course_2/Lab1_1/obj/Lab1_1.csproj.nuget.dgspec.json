@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab1_1\\Lab1_1.csproj": {}
+    "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\lab1_1\\Lab1_1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab1_1\\Lab1_1.csproj": {
+    "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\lab1_1\\Lab1_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab1_1\\Lab1_1.csproj",
+        "projectUniqueName": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\lab1_1\\Lab1_1.csproj",
         "projectName": "Lab1_1",
-        "projectPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab1_1\\Lab1_1.csproj",
+        "projectPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\lab1_1\\Lab1_1.csproj",
         "packagesPath": "C:\\Users\\Praetor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab1_1\\obj\\",
+        "outputPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\lab1_1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Praetor\\AppData\\Roaming\\NuGet\\NuGet.Config",
