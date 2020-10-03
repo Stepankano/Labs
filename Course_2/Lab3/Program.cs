@@ -15,6 +15,7 @@ namespace Lab3
 
             G gg = new G(5);
 
+
             System.Console.WriteLine($"ff = {ff.get_value()}");
             System.Console.WriteLine($"df = {df.get_value()}");
             System.Console.WriteLine($"gf = {gf.get_value()}");
