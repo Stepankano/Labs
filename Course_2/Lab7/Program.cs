@@ -7,25 +7,30 @@ namespace Lab7
         static void Main(string[] args)
         {
             Client clnt = new Client(90);
-            Server srvr = new Server();
-            System.Console.WriteLine($"Server.Value = {srvr.get_b()}");
-            System.Console.WriteLine($"Client.Value = {srvr.get_get_value(clnt)}");
+            Server_non_Static Serv = new Server_non_Static();
+            System.Console.WriteLine($"Client.Value = {clnt.get_value()}");
+            System.Console.WriteLine($"Server_Static.Value = {clnt.get_value_thro_serv_static()}");
+            System.Console.WriteLine($"Server_non_Static.Value = {clnt.get_value_thro_serv(Serv)}");
+
         }
     }
     class Client
     {
         public Client(int a) => value = a;
-
         private int value = 0;
         public int get_value() => value;
-
+        public int get_value_thro_serv_static() => Server_Static.get_value(this);
+        public int get_value_thro_serv(Server_non_Static serv) => serv.get_value(this);
     }
-    class Server
+    static class Server_Static // это что-то типа общности
     {
-        public int get_get_value(Client a) => a.get_value();
-        private int b = 100;
-        public int get_b() => b;
+        static public int get_value(Client a) => a.get_value();
     }
+    class Server_non_Static // это сервер из "клиент - сервер"
+    {
+        public int get_value(Client a) => a.get_value();
+    }
+
 
 
 }
