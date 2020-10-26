@@ -12,9 +12,10 @@ namespace Lab8
             intr.print_value();
             str.print_value();
             TT.print_value();
+
             int int1 = 1, int2 = 2;
             System.Console.WriteLine($"int1 = {int1}, int 2 = {int2}");
-            Template<int>.swap(ref int1,ref int2);
+            Template<int>.swap(ref int1, ref int2);
             System.Console.WriteLine($"int1 = {int1}, int 2 = {int2}");
         }
     }
@@ -46,11 +47,13 @@ namespace Lab8
         }
         public void print_value() =>
             System.Console.WriteLine($"{this.ToString()} = {this.value}");
+        
+
         public static void swap(ref T frst, ref T scnd)
         {
-            T third = frst;
+            T thrd = frst;
             frst = scnd;
-            scnd = third;
+            scnd = thrd;
             System.Console.WriteLine("Swap!");
         }
 
