@@ -7,7 +7,8 @@ namespace Lab9._1
     {
         delegate void Non_return();
     delegate int Int_return();
-    delegate Generic Operate<Generic>(Generic value);
+    delegate void Action<T>(T value);
+    delegate T Func<T>(T value);
         static void Main(string[] args)
         {
             ///// 1
@@ -25,12 +26,10 @@ namespace Lab9._1
             };
             NR();
             ///// 4
-            Operate<string> oper = STR;
+            Func<string> oper = STR;
             System.Console.WriteLine(oper("Template delegate"));
-
-
-            
-
+            Action<string> act = Integer<string>;
+            act("String, again");
         }
         public static int one()=>1;
 
@@ -38,7 +37,6 @@ namespace Lab9._1
         public static void prent2()=>System.Console.WriteLine("Prent2");
         public static void prent3()=>System.Console.WriteLine("Prent3");
         public static string STR(string str)=>str;
-        
-
+        public static void Integer<T>(T val)=>System.Console.WriteLine(val.ToString());
     }
 }
