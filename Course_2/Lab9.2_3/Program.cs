@@ -7,8 +7,6 @@ namespace Lab9._2_3
     {
         delegate void non_return(int f);
         delegate int int_return();
-        delegate void NC(string value);
-        event NC Notify;
         static void Main(string[] args)
         {
             /// 9.2
@@ -42,8 +40,6 @@ namespace Lab9._2_3
         class Subscriber{
             private string name = "";
             public Subscriber(string nname)=>name = nname;
-            public delegate void Sub(string message);
-            public event Sub Notify;
             public void Like(string content){
                 System.Console.WriteLine(name+ " like: "+ content);
             }
