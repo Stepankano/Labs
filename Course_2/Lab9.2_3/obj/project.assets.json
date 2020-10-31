@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2\\Lab9.2.csproj",
-      "projectName": "Lab9.2",
-      "projectPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2\\Lab9.2.csproj",
+      "projectUniqueName": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2_3\\Lab9.2_3.csproj",
+      "projectName": "Lab9.2_3",
+      "projectPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2_3\\Lab9.2_3.csproj",
       "packagesPath": "C:\\Users\\Praetor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2\\obj\\",
+      "outputPath": "C:\\Users\\Praetor\\Labs\\Laba10\\Course_2\\Lab9.2_3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Praetor\\AppData\\Roaming\\NuGet\\NuGet.Config",
