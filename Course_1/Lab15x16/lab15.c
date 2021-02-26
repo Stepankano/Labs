@@ -1,44 +1,57 @@
 #include <stdio.h>
 
- 
-int rank(int a){
-    int k = 0;
-   for(int i = 0; i < 8 ;i++){
-       if(a - (k+1+2*i) == 0){
-           return i+1;
-       }
-       k+=1+2*i;
-   }
+int main()
+{
 
-}
-
-void swap (int* a, int* b){
-   int t = *a;
-   *a = *b;
-   *b = t;
-
-}
-
-int main(){
-    
-    int matrix, rang, var, k = 0;
-    int table [65];
-    while ( scanf ( "%d", &matrix) != EOF){
-        table[k+1]=matrix;
-    k+=1;
+    int matrix, rang, min,max,row =0;
+    int table[64];
+    printf("rang: ");
+    scanf("%d", &rang);
+    for (int i = 0; i < rang * rang; i++)
+    {
+        scanf("%d", &table[i]);
+        if (i == 0)
+        {
+            min = table[i];
+            max = table[i];
+        }
+        else
+        {
+            if (min > table[i])
+            {
+                min = table[i];
+            }
+            if (max < table[i])
+            {
+                max = table[i];
+            }
+        }
     }
-    
-    rang = rank(k);
-    k=1;
-    for(int i = 0; i < rang; i++ ){
-    swap((&table[(i*rang)+i+1]),&(table[rang*(i+1)-(i)]));
-    for(int j = 1; j <= rang;j++){
-        printf("%3d ", table[(i*rang) + j]);
-        
+    for(int i =0;i<rang;i++){
+        for(int j = 0;j<rang;j++){
+            if(table[i+j*rang]==min){
+                row+=1;
+               j=rang;
+            }
+        }
     }
+
+    for(int i = 0;i<rang*rang;i++){
+        if(table[i]==max){
+            table[i]=row;
+        }
+    }
+
+    printf("\n");
+    
+    for(int i =0;i<rang;i++){
+        for(int j = 0;j<rang;j++){
+            printf("%d ",table[i*rang+j]);
+        }
+        printf("\n");
+    }
+
     printf("%c", '\n');
-    }
-    
-   
-return 0;
+
+    return 0;
 }

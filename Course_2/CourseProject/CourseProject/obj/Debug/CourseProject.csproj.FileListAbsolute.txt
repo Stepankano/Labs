@@ -1,0 +1,10 @@
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\bin\Debug\CourseProject.exe.config
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\bin\Debug\CourseProject.exe
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\bin\Debug\CourseProject.pdb
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.csprojAssemblyReference.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.Properties.Resources.resources
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.csproj.GenerateResource.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.csproj.CoreCompileInputs.cache
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.exe
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.pdb
+C:\Users\Praetor\Labs\Laba10\Course_2\CourseProject\CourseProject\obj\Debug\CourseProject.Form1.resources

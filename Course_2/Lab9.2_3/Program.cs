@@ -12,7 +12,7 @@ namespace Lab9._2_3
             /// 9.2
             non_return lambdaNR = (int f) => System.Console.WriteLine(f);
             int_return lambdaIR = () => 2;
-            lambdaNR(2);
+            lambdaNR(6);
             System.Console.WriteLine(lambdaIR());
 
             /// 9.3

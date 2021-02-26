@@ -1,35 +1,30 @@
 #include <stdio.h>
 
-int counter(char a){
-  int number = 1;
-  while( scanf ("%c", &a ) != EOF ){
-    
-    if( a == ' ' || a == '\n'){
-      return number;
-    } else {      
-      number += 1;
+int check(int a)
+{
+  while (a > 0)
+  {
+    if (a % 10 == 8 || a % 10 == 9)
+    {
+      return 0;
     }
-}
-return number;
+    a = a / 10;
+  }
+  return 1;
 }
 
-int main(){
-  char key;
-  int min = 0, number=999999999, junk;
-  
-  while( scanf ("%c", &key ) != EOF ){
-    if( key == ' ' || key == '\n'){
-    } else { 
-           junk = counter(key);
-      if (junk == number){
-        min += 1;
-      }
-      if (junk < number){
-        min = 1;
-        number = junk;
-      }
+int main()
+{
+  int min = 10;
+  int max = 1000;
+  int count = 0;
+  for (int i = min; i <= max; i++)
+  {
+    if (check(i) == 1)
+    {
+      count += 1;
     }
   }
-  printf("%d %d",min, number);
+  printf("%d\n",count);
   return 0;
 }
